@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pedro Henrique Maciel — Backend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg:        #080a0f;
+    --bg2:       #0d1017;
+    --bg3:       #111620;
+    --border:    #1e2535;
+    --border2:   #2a3347;
+    --accent:    #4f8ef7;
+    --accent2:   #2563eb;
+    --accent-glow: rgba(79,142,247,0.18);
+    --text:      #e8edf5;
+    --muted:     #6b7a99;
+    --muted2:    #4a566e;
+    --green:     #22d3a5;
+    --green-dim: rgba(34,211,165,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* ── CUSTOM CURSOR ── */
+  #cursor {
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%);
+    transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background 0.2s;
+    mix-blend-mode: screen;
+  }
+  #cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(79,142,247,0.4);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9998;
+    transform: translate(-50%,-50%);
+    transition: transform 0.18s ease, width 0.25s ease, height 0.25s ease, opacity 0.2s;
+  }
+  body:hover #cursor { width: 10px; }
+  a:hover ~ #cursor, button:hover ~ #cursor { width: 20px; height: 20px; }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 1; opacity: 0.5;
+  }
+
+  /* ── GRID BACKGROUND ── */
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(79,142,247,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,142,247,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none; z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(8,10,15,0.75);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.3s;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.05rem;
+    color: var(--text); letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .nav-logo-mark {
+    display: flex; align-items: center; justify-content: center;
+    width: 58px; height: 34px;
+    border: 1.5px solid var(--accent);
+    border-radius: 4px;
+    position: relative;
+    background: rgba(79,142,247,0.06);
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  .nav-logo:hover .nav-logo-mark {
+    background: rgba(79,142,247,0.14);
+    box-shadow: 0 0 16px var(--accent-glow);
+  }
+  .nav-logo-mark svg { width: 52px; height: 24px; }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .nav-logo-phm { font-size: 1rem; font-weight: 800; letter-spacing: 0.12em; color: var(--text); }
+  .nav-logo-sub { font-size: 0.48rem; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; margin-top: 2px; font-weight: 400; font-family: 'JetBrains Mono', monospace; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -3px; left: 0;
+    width: 0; height: 1px; background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-status {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.7rem; color: var(--green); letter-spacing: 0.08em;
+  }
+  .status-dot {
+    width: 6px; height: 6px;
+    background: var(--green); border-radius: 50%;
+    animation: pulse-green 2s ease-in-out infinite;
+  }
+  @keyframes pulse-green {
+    0%,100% { box-shadow: 0 0 0 0 rgba(34,211,165,0.4); }
+    50% { box-shadow: 0 0 0 5px rgba(34,211,165,0); }
+  }
+
+  /* ── SECTIONS ── */
+  section { position: relative; z-index: 2; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    padding: 8rem 3rem 4rem;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .hero-tag {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid var(--accent);
+    padding: 0.3rem 0.8rem; border-radius: 2px;
+    margin-bottom: 2rem;
+    opacity: 0; animation: fadeUp 0.6s 0.2s forwards;
+  }
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: clamp(2.6rem, 7vw, 5.8rem);
+    line-height: 0.95; letter-spacing: -0.02em;
+    color: var(--text);
+    opacity: 0; animation: fadeUp 0.7s 0.35s forwards;
+  }
+  .hero-name .line2 { color: var(--accent); display: block; }
+  .hero-desc {
+    margin-top: 2rem; max-width: 560px;
+    font-size: 0.9rem; line-height: 1.8; color: var(--muted);
+    opacity: 0; animation: fadeUp 0.7s 0.5s forwards;
+  }
+  .hero-desc strong { color: var(--text); font-weight: 500; }
+  .hero-cta {
+    display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.7s 0.65s forwards;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.8rem 1.8rem; border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase;
+    text-decoration: none; cursor: none;
+    transition: all 0.25s ease;
+  }
+  .btn-primary {
+    background: var(--accent); color: #fff;
+    border: 1px solid var(--accent);
+  }
+  .btn-primary:hover {
+    background: var(--accent2);
+    box-shadow: 0 0 30px var(--accent-glow);
+    transform: translateY(-2px);
+  }
+  .btn-secondary {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border2);
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent); color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .hero-scroll {
+    position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: var(--muted2); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    opacity: 0; animation: fadeUp 1s 1.2s forwards;
+  }
+  .scroll-line {
+    width: 1px; height: 48px;
+    background: linear-gradient(to bottom, var(--muted2), transparent);
+    animation: scrollDown 2s ease-in-out infinite;
+  }
+  @keyframes scrollDown {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    padding: 7rem 3rem;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .section-label {
+    font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text); margin-bottom: 3rem;
+    line-height: 1.1;
+  }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start;
+  }
+  .about-text { font-size: 0.88rem; line-height: 1.9; color: var(--muted); }
+  .about-text p + p { margin-top: 1.2rem; }
+  .about-text strong { color: var(--text); font-weight: 500; }
+  .code-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px; overflow: hidden;
+  }
+  .code-header {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg3);
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #febc2e; }
+  .dot-g { background: #28c840; }
+  .code-filename { margin-left: auto; font-size: 0.65rem; color: var(--muted2); }
+  .code-body { padding: 1.4rem 1.2rem; font-size: 0.78rem; line-height: 1.8; overflow-x: auto; }
+  .kw { color: #7aa2f7; }
+  .str { color: #9ece6a; }
+  .cls { color: #e0af68; }
+  .cmt { color: var(--muted2); font-style: italic; }
+  .fn { color: #7dcfff; }
+
+  /* ── SKILLS ── */
+  #skills {
+    padding: 7rem 3rem;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .skills-inner { max-width: 1100px; margin: 0 auto; }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .skill-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.6rem;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .skill-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .skill-card:hover {
+    border-color: var(--border2);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .skill-card:hover::before { opacity: 1; }
+  .skill-card-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+  .skill-card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600; font-size: 0.9rem;
+    color: var(--text); margin-bottom: 0.6rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+  .tag {
+    font-size: 0.65rem; padding: 0.25rem 0.6rem;
+    border-radius: 2px; border: 1px solid var(--border2);
+    color: var(--muted); letter-spacing: 0.05em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .skill-card:hover .tag { border-color: var(--accent); color: var(--accent); }
+
+  /* ── PROJECTS ── */
+  #projects {
+    padding: 7rem 3rem;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .project-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+    display: flex; flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .project-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at var(--mx,50%) var(--my,50%), var(--accent-glow) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .project-card:hover { border-color: var(--border2); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .project-card:hover::after { opacity: 1; }
+  .project-num {
+    font-size: 0.65rem; color: var(--accent); letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 1.1rem;
+    color: var(--text); margin-bottom: 0.8rem; line-height: 1.3;
+  }
+  .project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.7; flex: 1; }
+  .project-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 1.5rem; padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+  }
+  .project-stack { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .stack-badge {
+    font-size: 0.6rem; padding: 0.2rem 0.5rem;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 2px; color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .project-link {
+    color: var(--accent); text-decoration: none; font-size: 0.72rem;
+    display: flex; align-items: center; gap: 0.3rem;
+    transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 0.6rem; }
+  .project-status {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.62rem; letter-spacing: 0.08em;
+    padding: 0.2rem 0.6rem; border-radius: 2px; margin-bottom: 0.8rem;
+  }
+  .status-active { background: var(--green-dim); color: var(--green); border: 1px solid rgba(34,211,165,0.2); }
+  .status-done { background: rgba(79,142,247,0.1); color: var(--accent); border: 1px solid rgba(79,142,247,0.2); }
+
+  /* ── STATS ── */
+  #stats {
+    padding: 5rem 3rem;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .stats-inner { max-width: 1100px; margin: 0 auto; }
+  .stats-row {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; margin-top: 3rem;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg3);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .stat-item:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--accent-glow); }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 2.8rem;
+    color: var(--accent); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: 7rem 3rem;
+    max-width: 1100px; margin: 0 auto;
+    text-align: center;
+  }
+  .contact-big {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: clamp(2.5rem, 6vw, 5rem);
+    color: var(--text); line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .contact-big span { color: var(--accent); }
+  .contact-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 3rem; line-height: 1.7; }
+  .contact-links {
+    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative; z-index: 2;
+    border-top: 1px solid var(--border);
+    padding: 1.8rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--bg);
+  }
+  .footer-copy { font-size: 0.68rem; color: var(--muted2); }
+  .footer-copy span { color: var(--accent); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.68rem; color: var(--muted2); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── HAMBURGER / MOBILE NAV ── */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: none; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 1px; background: var(--text); transition: all 0.3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links, .nav-status { display: none; }
+    .hamburger { display: flex; }
+    #hero { padding: 7rem 1.5rem 3rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .stats-row { grid-template-columns: repeat(2,1fr); }
+    #about, #skills, #projects, #contact { padding: 4rem 1.5rem; }
+    #skills, #stats { padding: 4rem 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  /* ── TYPING CURSOR ── */
+  .typed-cursor { animation: blink 1s step-end infinite; color: var(--accent); }
+  @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:0; } }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 52 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- BG: P faint -->
+        <rect x="2" y="3" width="2.5" height="28" fill="#4f8ef7" fill-opacity="0.15"/>
+        <rect x="2" y="3" width="13" height="2.5" fill="#4f8ef7" fill-opacity="0.15"/>
+        <rect x="2" y="14.5" width="13" height="2.5" fill="#4f8ef7" fill-opacity="0.15"/>
+        <rect x="12.5" y="3" width="2.5" height="14" fill="#4f8ef7" fill-opacity="0.15"/>
+        <!-- BG: H faint -->
+        <rect x="19" y="3" width="2.5" height="28" fill="#e8edf5" fill-opacity="0.07"/>
+        <rect x="33" y="3" width="2.5" height="28" fill="#e8edf5" fill-opacity="0.07"/>
+        <rect x="19" y="15.5" width="17" height="2.5" fill="#e8edf5" fill-opacity="0.07"/>
+        <!-- FG: P -->
+        <rect x="2" y="3" width="2" height="28" fill="#4f8ef7"/>
+        <rect x="2" y="3" width="12" height="2" fill="#4f8ef7"/>
+        <rect x="2" y="14.5" width="12" height="2" fill="#4f8ef7"/>
+        <rect x="12" y="3" width="2" height="13.5" fill="#4f8ef7"/>
+        <!-- FG: H -->
+        <rect x="19" y="3" width="2" height="28" fill="#e8edf5"/>
+        <rect x="33.5" y="3" width="2" height="28" fill="#e8edf5"/>
+        <rect x="19" y="15.5" width="16.5" height="2" fill="#e8edf5"/>
+        <!-- M front, centered, glowing — thicker strokes -->
+        <defs><filter id="gN"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <rect x="37" y="3" width="3.5" height="28" fill="#4f8ef7" filter="url(#gN)"/>
+        <rect x="49.5" y="3" width="3.5" height="28" fill="#4f8ef7" filter="url(#gN)"/>
+        <polygon points="37,3 40.5,3 45.2,16 49.5,3 53,3 45.2,20.5" fill="#4f8ef7" filter="url(#gN)"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-phm">PHM<span>.</span></span>
+      <span class="nav-logo-sub">Pedro Henrique Maciel</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Stack</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#brand">Brand</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-status">
+    <span class="status-dot"></span>
+    Open to work
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-tag">// Backend Developer</div>
+
+  <!-- HERO LOGO MARK — large layered PHM -->
+  <div style="margin-bottom:2rem;opacity:0;animation:fadeUp 0.6s 0.28s forwards;">
+    <svg width="140" height="56" viewBox="0 0 140 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- BG: P ghost -->
+      <rect x="2" y="2" width="6" height="52" fill="#4f8ef7" fill-opacity="0.10"/>
+      <rect x="2" y="2" width="32" height="6" fill="#4f8ef7" fill-opacity="0.10"/>
+      <rect x="2" y="26" width="32" height="6" fill="#4f8ef7" fill-opacity="0.10"/>
+      <rect x="28" y="2" width="6" height="30" fill="#4f8ef7" fill-opacity="0.10"/>
+      <!-- BG: H ghost -->
+      <rect x="42" y="2" width="6" height="52" fill="#e8edf5" fill-opacity="0.06"/>
+      <rect x="84" y="2" width="6" height="52" fill="#e8edf5" fill-opacity="0.06"/>
+      <rect x="42" y="26" width="48" height="6" fill="#e8edf5" fill-opacity="0.06"/>
+      <!-- FG: P solid blue -->
+      <rect x="2" y="2" width="5" height="52" fill="#4f8ef7"/>
+      <rect x="2" y="2" width="30" height="5" fill="#4f8ef7"/>
+      <rect x="2" y="26" width="30" height="5" fill="#4f8ef7"/>
+      <rect x="27" y="2" width="5" height="29" fill="#4f8ef7"/>
+      <!-- FG: H solid white -->
+      <rect x="42" y="2" width="5" height="52" fill="#e8edf5"/>
+      <rect x="85" y="2" width="5" height="52" fill="#e8edf5"/>
+      <rect x="42" y="26" width="48" height="5" fill="#e8edf5"/>
+      <!-- M front — thick, glowing, centered over PH -->
+      <defs>
+        <filter id="gHero" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <rect x="96" y="2" width="8" height="52" fill="#4f8ef7" filter="url(#gHero)"/>
+      <rect x="132" y="2" width="8" height="52" fill="#4f8ef7" filter="url(#gHero)"/>
+      <polygon points="96,2 104,2 120,32 132,2 140,2 120,40" fill="#4f8ef7" filter="url(#gHero)"/>
+    </svg>
+  </div>
+
+  <h1 class="hero-name">
+    Pedro<br/>Henrique<br/>
+    <span class="line2">Maciel<span class="typed-cursor">_</span></span>
+  </h1>
+  <p class="hero-desc">
+    Building <strong>robust backend systems</strong> with Java &amp; Spring Boot.<br/>
+    Passionate about <strong>clean architecture</strong>, REST APIs,<br/>
+    and scalable solutions that actually work.
+  </p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-primary">View Projects →</a>
+    <a href="https://www.linkedin.com/in/pedro-henrique-maciel-da-silva-faria-2a2936252/" target="_blank" class="btn btn-secondary">LinkedIn ↗</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label reveal">// 01 — About</p>
+  <h2 class="section-title reveal">Who I Am</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        I'm <strong>Pedro Henrique Maciel</strong>, a backend developer based in
+        <strong>Rio de Janeiro, Brazil</strong>, focused on building
+        well-structured, high-quality systems.
+      </p>
+      <p>
+        My main stack revolves around <strong>Java</strong> and <strong>Spring Boot</strong>,
+        with solid experience designing <strong>REST APIs</strong>, relational databases
+        with <strong>PostgreSQL</strong>, and scalable microservice-oriented architectures.
+      </p>
+      <p>
+        I care deeply about <strong>clean code</strong>, SOLID principles, and writing
+        software that is easy to read, test, and maintain — not just software that works.
+      </p>
+      <p>
+        Currently expanding into <strong>DevOps</strong>, Docker, and cloud infrastructure
+        to become a more complete backend engineer.
+      </p>
+    </div>
+    <div class="code-block reveal">
+      <div class="code-header">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="code-filename">PedroHenrique.java</span>
+      </div>
+      <div class="code-body">
+<pre><span class="kw">public class</span> <span class="cls">PedroHenrique</span> {
+
+  <span class="kw">private final</span> String role =
+    <span class="str">"Backend Developer"</span>;
+
+  <span class="kw">private final</span> String[] stack = {
+    <span class="str">"Java"</span>, <span class="str">"Spring Boot"</span>,
+    <span class="str">"PostgreSQL"</span>, <span class="str">"Node.js"</span>,
+    <span class="str">"TypeScript"</span>, <span class="str">"Docker"</span>
+  };
+
+  <span class="kw">private final</span> String[] values = {
+    <span class="str">"Clean Code"</span>, <span class="str">"SOLID"</span>,
+    <span class="str">"RESTful Design"</span>, <span class="str">"TDD"</span>
+  };
+
+  <span class="kw">public</span> String <span class="fn">getMotivation</span>() {
+    <span class="kw">return</span> <span class="str">"Evolving every day."</span>;
+  }
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-inner">
+    <p class="section-label reveal">// 02 — Stack</p>
+    <h2 class="section-title reveal">Tech Stack</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">☕</div>
+        <div class="skill-card-title">Backend</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.6">Core stack for building APIs and server-side systems.</p>
+        <div class="skill-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Spring Security</span>
+          <span class="tag">JPA / Hibernate</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🗄️</div>
+        <div class="skill-card-title">Databases</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.6">Relational databases, modeling and query optimization.</p>
+        <div class="skill-tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Data Modeling</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">⚙️</div>
+        <div class="skill-card-title">DevOps & Tools</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.6">Tools for workflow, containerization and collaboration.</p>
+        <div class="skill-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Postman</span>
+          <span class="tag">IntelliJ IDEA</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🏗️</div>
+        <div class="skill-card-title">Architecture</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.6">Principles and patterns for scalable, maintainable systems.</p>
+        <div class="skill-tags">
+          <span class="tag">REST APIs</span>
+          <span class="tag">Clean Architecture</span>
+          <span class="tag">SOLID</span>
+          <span class="tag">MVC</span>
+          <span class="tag">Microservices</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label reveal">// 03 — Work</p>
+  <h2 class="section-title reveal">Featured Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
+      <div class="project-num">01 /</div>
+      <div class="project-status status-active">● Active</div>
+      <div class="project-title">✈️ Air Operations System</div>
+      <p class="project-desc">Operational air management platform with user hierarchy, comprehensive reporting and granular permission control across organizational roles.</p>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="stack-badge">Java</span>
+          <span class="stack-badge">Spring Boot</span>
+          <span class="stack-badge">PostgreSQL</span>
+        </div>
+        <a href="https://github.com/Bokinhass" target="_blank" class="project-link">View →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
+      <div class="project-num">02 /</div>
+      <div class="project-status status-done">✓ Complete</div>
+      <div class="project-title">🔍 FIPE Table Search</div>
+      <p class="project-desc">Vehicle price consultation tool integrating with Brazil's official FIPE public API. Search by brand, model and year with clean data presentation.</p>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="stack-badge">Java</span>
+          <span class="stack-badge">Spring Boot</span>
+          <span class="stack-badge">REST API</span>
+        </div>
+        <a href="https://github.com/Bokinhass/Table-Fipe-Search" target="_blank" class="project-link">View →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
+      <div class="project-num">03 /</div>
+      <div class="project-status status-done">✓ Complete</div>
+      <div class="project-title">👥 Gestão de Vagas</div>
+      <p class="project-desc">Job vacancy management system with distinct candidate and recruiter roles, application workflow and structured data management.</p>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="stack-badge">Java</span>
+          <span class="stack-badge">Spring Boot</span>
+          <span class="stack-badge">PostgreSQL</span>
+        </div>
+        <a href="https://github.com/Bokinhass/Gestao_Vagas" target="_blank" class="project-link">View →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
+      <div class="project-num">04 /</div>
+      <div class="project-status status-active">● In Progress</div>
+      <div class="project-title">✅ Gamified TodoList</div>
+      <p class="project-desc">Productivity platform with reward mechanics and progression systems. Turns daily tasks into an engaging experience with points and milestones.</p>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="stack-badge">Node.js</span>
+          <span class="stack-badge">TypeScript</span>
+        </div>
+        <a href="https://github.com/Bokinhass/TodoList" target="_blank" class="project-link">View →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
+      <div class="project-num">05 /</div>
+      <div class="project-status status-done">✓ Complete</div>
+      <div class="project-title">🏺 Beca Ateliê</div>
+      <p class="project-desc">Elegant showcase website for a handcrafted ceramics brand. Focused on visual presentation and clean UI to highlight artisan products.</p>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="stack-badge">TypeScript</span>
+          <span class="stack-badge">HTML</span>
+          <span class="stack-badge">CSS</span>
+        </div>
+        <a href="https://github.com/Bokinhass" target="_blank" class="project-link">View →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)" style="border-style:dashed;display:flex;align-items:center;justify-content:center;text-align:center;min-height:220px;">
+      <div>
+        <div style="font-size:2rem;margin-bottom:1rem;opacity:0.3">+</div>
+        <div style="font-size:0.78rem;color:var(--muted2)">More projects on GitHub</div>
+        <a href="https://github.com/Bokinhass" target="_blank" class="btn btn-secondary" style="margin-top:1.2rem;font-size:0.68rem;padding:0.6rem 1.2rem;">github.com/Bokinhass →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-inner">
+    <p class="section-label reveal">// 04 — Numbers</p>
+    <h2 class="section-title reveal">By the Numbers</h2>
+    <div class="stats-row">
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="33">0</div>
+        <div class="stat-label">Repositories</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="5">0</div>
+        <div class="stat-label">Featured Projects</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="2">0</div>
+        <div class="stat-label">Years Building</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="100" data-suffix="%">0</div>
+        <div class="stat-label">Commitment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHM BRAND -->
+<section id="brand" style="padding:7rem 3rem;max-width:1100px;margin:0 auto;">
+  <p class="section-label reveal">// 05 — Identity</p>
+  <h2 class="section-title reveal">The Brand</h2>
+  <p style="font-size:0.82rem;color:var(--muted);max-width:520px;line-height:1.8;margin-bottom:4rem;" class="reveal">
+    A marca <strong style="color:var(--text)">PHM</strong> representa a identidade profissional construída sobre
+    três pilares — <strong style="color:var(--text)">Precisão</strong>, <strong style="color:var(--text)">Honestidade</strong>
+    e <strong style="color:var(--text)">Maestria</strong> — valores que guiam cada linha de código.
+  </p>
+
+  <!-- LOGO SHOWCASE -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;">
+
+    <!-- PRIMARY MARK — layered PH bg + M front -->
+    <div class="reveal" style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:2.5rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+      <div style="font-size:0.6rem;letter-spacing:0.2em;color:var(--muted2);text-transform:uppercase;">Primary Mark</div>
+      <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="110" height="110" rx="18" fill="#0d1017"/>
+        <rect x="1" y="1" width="108" height="108" rx="17" stroke="#4f8ef7" stroke-width="1.2" stroke-opacity="0.4"/>
+
+        <!-- BG LAYER: P (left, large, low opacity) -->
+        <rect x="8" y="10" width="7" height="90" fill="#4f8ef7" fill-opacity="0.13"/>
+        <rect x="8" y="10" width="38" height="7" fill="#4f8ef7" fill-opacity="0.13"/>
+        <rect x="8" y="44" width="38" height="7" fill="#4f8ef7" fill-opacity="0.13"/>
+        <rect x="39" y="10" width="7" height="41" fill="#4f8ef7" fill-opacity="0.13"/>
+
+        <!-- BG LAYER: H (right, large, low opacity) -->
+        <rect x="54" y="10" width="7" height="90" fill="#e8edf5" fill-opacity="0.07"/>
+        <rect x="95" y="10" width="7" height="90" fill="#e8edf5" fill-opacity="0.07"/>
+        <rect x="54" y="47" width="48" height="7" fill="#e8edf5" fill-opacity="0.07"/>
+
+        <!-- FOREGROUND: P (solid, full) -->
+        <rect x="8" y="10" width="5.5" height="90" fill="#4f8ef7"/>
+        <rect x="8" y="10" width="36" height="5.5" fill="#4f8ef7"/>
+        <rect x="8" y="44" width="36" height="5.5" fill="#4f8ef7"/>
+        <rect x="38.5" y="10" width="5.5" height="39.5" fill="#4f8ef7"/>
+
+        <!-- FOREGROUND: H (solid) -->
+        <rect x="54" y="10" width="5.5" height="90" fill="#e8edf5"/>
+        <rect x="96.5" y="10" width="5.5" height="90" fill="#e8edf5"/>
+        <rect x="54" y="47" width="48" height="5.5" fill="#e8edf5"/>
+
+        <!-- FRONT LAYER: M — thicker, more prominent -->
+        <rect x="26" y="28" width="8" height="54" fill="#4f8ef7" filter="url(#glow)"/>
+        <rect x="76" y="28" width="8" height="54" fill="#4f8ef7" filter="url(#glow)"/>
+        <polygon points="26,28 34,28 55,57 76,28 84,28 55,66" fill="#4f8ef7" filter="url(#glow)"/>
+
+        <!-- glow filter for M -->
+        <defs>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- accent dot -->
+        <circle cx="99" cy="99" r="3" fill="#4f8ef7" fill-opacity="0.6"/>
+      </svg>
+      <div style="text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:0.18em;color:var(--text);">PHM</div>
+        <div style="font-size:0.55rem;letter-spacing:0.22em;color:var(--muted);margin-top:4px;text-transform:uppercase;">Pedro Henrique Maciel</div>
+      </div>
+    </div>
+
+    <!-- DARK VARIANT — horizontal, same layered concept -->
+    <div class="reveal" style="background:#080a0f;border:1px solid var(--border);border-radius:8px;padding:2.5rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+      <div style="font-size:0.6rem;letter-spacing:0.2em;color:var(--muted2);text-transform:uppercase;">Dark Variant</div>
+      <div style="display:flex;align-items:center;gap:1.2rem;">
+        <!-- compact square mark -->
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="9" fill="#111620"/>
+          <rect x="0.7" y="0.7" width="50.6" height="50.6" rx="8.3" stroke="#4f8ef7" stroke-width="1" stroke-opacity="0.5"/>
+          <!-- BG PH faint -->
+          <rect x="4" y="7" width="3" height="38" fill="#4f8ef7" fill-opacity="0.12"/>
+          <rect x="4" y="7" width="16" height="3" fill="#4f8ef7" fill-opacity="0.12"/>
+          <rect x="4" y="21" width="16" height="3" fill="#4f8ef7" fill-opacity="0.12"/>
+          <rect x="17" y="7" width="3" height="17" fill="#4f8ef7" fill-opacity="0.12"/>
+          <rect x="25" y="7" width="3" height="38" fill="#e8edf5" fill-opacity="0.07"/>
+          <rect x="44" y="7" width="3" height="38" fill="#e8edf5" fill-opacity="0.07"/>
+          <rect x="25" y="24" width="22" height="3" fill="#e8edf5" fill-opacity="0.07"/>
+          <!-- FG PH solid -->
+          <rect x="4" y="7" width="2.5" height="38" fill="#4f8ef7"/>
+          <rect x="4" y="7" width="15" height="2.5" fill="#4f8ef7"/>
+          <rect x="4" y="21" width="15" height="2.5" fill="#4f8ef7"/>
+          <rect x="16.5" y="7" width="2.5" height="16.5" fill="#4f8ef7"/>
+          <rect x="25" y="7" width="2.5" height="38" fill="#e8edf5"/>
+          <rect x="44.5" y="7" width="2.5" height="38" fill="#e8edf5"/>
+          <rect x="25" y="24" width="22" height="2.5" fill="#e8edf5"/>
+          <!-- M front — thicker -->
+          <defs><filter id="g2"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <rect x="11" y="13" width="4.5" height="26" fill="#4f8ef7" filter="url(#g2)"/>
+          <rect x="37" y="13" width="4.5" height="26" fill="#4f8ef7" filter="url(#g2)"/>
+          <polygon points="11,13 15.5,13 26,29 37,13 41.5,13 26,34" fill="#4f8ef7" filter="url(#g2)"/>
+        </svg>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:0.15em;color:var(--text);">PHM<span style="color:var(--accent)">.</span></div>
+          <div style="font-size:0.5rem;letter-spacing:0.2em;color:var(--muted);margin-top:2px;text-transform:uppercase;font-family:'JetBrains Mono',monospace;">Backend Dev</div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:0.72rem;color:var(--muted);line-height:1.6;">
+        Versão horizontal para uso<br/>em assinaturas e headers.
+      </div>
+    </div>
+
+    <!-- LIGHT VARIANT -->
+    <div class="reveal" style="background:#f0f2f7;border:1px solid var(--border);border-radius:8px;padding:2.5rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+      <div style="font-size:0.6rem;letter-spacing:0.2em;color:#8090b0;text-transform:uppercase;">Light Variant</div>
+      <div style="display:flex;align-items:center;gap:1.2rem;">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="9" fill="#1a2035"/>
+          <!-- BG PH faint -->
+          <rect x="4" y="7" width="3" height="38" fill="#4f8ef7" fill-opacity="0.15"/>
+          <rect x="4" y="7" width="16" height="3" fill="#4f8ef7" fill-opacity="0.15"/>
+          <rect x="4" y="21" width="16" height="3" fill="#4f8ef7" fill-opacity="0.15"/>
+          <rect x="17" y="7" width="3" height="17" fill="#4f8ef7" fill-opacity="0.15"/>
+          <rect x="25" y="7" width="3" height="38" fill="#fff" fill-opacity="0.08"/>
+          <rect x="44" y="7" width="3" height="38" fill="#fff" fill-opacity="0.08"/>
+          <rect x="25" y="24" width="22" height="3" fill="#fff" fill-opacity="0.08"/>
+          <!-- FG PH solid -->
+          <rect x="4" y="7" width="2.5" height="38" fill="#4f8ef7"/>
+          <rect x="4" y="7" width="15" height="2.5" fill="#4f8ef7"/>
+          <rect x="4" y="21" width="15" height="2.5" fill="#4f8ef7"/>
+          <rect x="16.5" y="7" width="2.5" height="16.5" fill="#4f8ef7"/>
+          <rect x="25" y="7" width="2.5" height="38" fill="#fff"/>
+          <rect x="44.5" y="7" width="2.5" height="38" fill="#fff"/>
+          <rect x="25" y="24" width="22" height="2.5" fill="#fff"/>
+          <!-- M front — thicker -->
+          <defs><filter id="g3"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <rect x="11" y="13" width="4.5" height="26" fill="#4f8ef7" filter="url(#g3)"/>
+          <rect x="37" y="13" width="4.5" height="26" fill="#4f8ef7" filter="url(#g3)"/>
+          <polygon points="11,13 15.5,13 26,29 37,13 41.5,13 26,34" fill="#4f8ef7" filter="url(#g3)"/>
+        </svg>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:0.15em;color:#0d1117;">PHM<span style="color:#2563eb">.</span></div>
+          <div style="font-size:0.5rem;letter-spacing:0.2em;color:#6b7a99;margin-top:2px;text-transform:uppercase;font-family:'JetBrains Mono',monospace;">Backend Dev</div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:0.72rem;color:#6b7a99;line-height:1.6;">
+        Para documentos, currículos<br/>e apresentações em fundo claro.
+      </div>
+    </div>
+
+    <!-- FUTURE COMPANY -->
+    <div class="reveal" style="background:linear-gradient(135deg,#0a0e1a,#0d1525);border:1px solid rgba(79,142,247,0.25);border-radius:8px;padding:2.5rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(79,142,247,0.12),transparent 70%);pointer-events:none;"></div>
+      <div style="font-size:0.6rem;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;border:1px solid rgba(79,142,247,0.3);padding:0.2rem 0.6rem;border-radius:2px;">Future Company</div>
+      <svg width="80" height="72" viewBox="0 0 80 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="80" height="72" rx="12" fill="#0d1525"/>
+        <rect x="0.8" y="0.8" width="78.4" height="70.4" rx="11.2" stroke="#4f8ef7" stroke-width="1" stroke-opacity="0.4"/>
+        <!-- BG: P faint -->
+        <rect x="6" y="8" width="4.5" height="56" fill="#4f8ef7" fill-opacity="0.11"/>
+        <rect x="6" y="8" width="24" height="4.5" fill="#4f8ef7" fill-opacity="0.11"/>
+        <rect x="6" y="28" width="24" height="4.5" fill="#4f8ef7" fill-opacity="0.11"/>
+        <rect x="25.5" y="8" width="4.5" height="25" fill="#4f8ef7" fill-opacity="0.11"/>
+        <!-- BG: H faint -->
+        <rect x="38" y="8" width="4.5" height="56" fill="#e8edf5" fill-opacity="0.06"/>
+        <rect x="67" y="8" width="4.5" height="56" fill="#e8edf5" fill-opacity="0.06"/>
+        <rect x="38" y="30" width="33.5" height="4.5" fill="#e8edf5" fill-opacity="0.06"/>
+        <!-- FG: P solid -->
+        <rect x="6" y="8" width="4" height="56" fill="#4f8ef7"/>
+        <rect x="6" y="8" width="23" height="4" fill="#4f8ef7"/>
+        <rect x="6" y="28" width="23" height="4" fill="#4f8ef7"/>
+        <rect x="25" y="8" width="4" height="24" fill="#4f8ef7"/>
+        <!-- FG: H solid -->
+        <rect x="38" y="8" width="4" height="56" fill="#e8edf5"/>
+        <rect x="68" y="8" width="4" height="56" fill="#e8edf5"/>
+        <rect x="38" y="30" width="34" height="4" fill="#e8edf5"/>
+        <!-- M front — thicker, more dominant -->
+        <defs><filter id="gS"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <rect x="15" y="16" width="7" height="40" fill="#4f8ef7" filter="url(#gS)"/>
+        <rect x="58" y="16" width="7" height="40" fill="#4f8ef7" filter="url(#gS)"/>
+        <polygon points="15,16 22,16 40,44 58,16 65,16 40,51" fill="#4f8ef7" filter="url(#gS)"/>
+        <!-- dot -->
+        <circle cx="72" cy="62" r="2.5" fill="#4f8ef7" fill-opacity="0.5"/>
+      </svg>
+      <div style="text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:0.2em;color:var(--text);">PHM</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:600;font-size:0.7rem;letter-spacing:0.25em;color:var(--accent);margin-top:2px;text-transform:uppercase;">Systems</div>
+        <div style="font-size:0.55rem;letter-spacing:0.12em;color:var(--muted2);margin-top:6px;font-family:'JetBrains Mono',monospace;">Software & Architecture</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label reveal">// 06 — Contact</p>
+  <h2 class="contact-big reveal">Let's build<br/><span>something.</span></h2>
+  <p class="contact-sub reveal">
+    Open to new opportunities, collaborations and interesting projects.<br/>
+    Reach out — I respond fast.
+  </p>
+  <div class="contact-links reveal">
+    <a href="mailto:SEUEMAIL@gmail.com" class="btn btn-primary">Send Email →</a>
+    <a href="https://www.linkedin.com/in/pedro-henrique-maciel-da-silva-faria-2a2936252/" target="_blank" class="btn btn-secondary">LinkedIn ↗</a>
+    <a href="https://github.com/Bokinhass" target="_blank" class="btn btn-secondary">GitHub ↗</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">© 2025 <span>Pedro Henrique Maciel</span>. Crafted with precision.</p>
+  <div class="footer-links">
+    <a href="https://github.com/Bokinhass" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/pedro-henrique-maciel-da-silva-faria-2a2936252/" target="_blank">LinkedIn</a>
+    <a href="mailto:SEUEMAIL@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+/* ── CURSOR ── */
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+function animateCursor() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+  ring.style.left   = rx + 'px'; ring.style.top  = ry + 'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+document.querySelectorAll('a,button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.width = '18px'; cursor.style.height = '18px';
+    ring.style.width = '52px'; ring.style.height = '52px';
+    ring.style.borderColor = 'rgba(79,142,247,0.6)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.width = '10px'; cursor.style.height = '10px';
+    ring.style.width = '36px'; ring.style.height = '36px';
+    ring.style.borderColor = 'rgba(79,142,247,0.4)';
+  });
+});
+
+/* ── REVEAL ON SCROLL ── */
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      const siblings = [...e.target.parentElement.querySelectorAll('.reveal')];
+      const idx = siblings.indexOf(e.target);
+      e.target.style.transitionDelay = (idx * 0.08) + 's';
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(r => io.observe(r));
+
+/* ── COUNT UP ── */
+function countUp(el) {
+  const target = +el.dataset.target;
+  const suffix = el.dataset.suffix || '';
+  let start = 0;
+  const dur = 1800;
+  const step = timestamp => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(ease * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const statNums = document.querySelectorAll('.stat-num');
+const statIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { countUp(e.target); statIO.unobserve(e.target); } });
+}, { threshold: 0.5 });
+statNums.forEach(n => statIO.observe(n));
+
+/* ── PROJECT CARD GLOW ── */
+function projectGlow(e, card) {
+  const r = card.getBoundingClientRect();
+  card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+  card.style.setProperty('--my', ((e.clientY - r.top)  / r.height * 100) + '%');
+}
+function resetGlow(card) {
+  card.style.setProperty('--mx', '50%');
+  card.style.setProperty('--my', '50%');
+}
+
+/* ── HAMBURGER (mobile) ── */
+document.getElementById('hamburger').addEventListener('click', () => {
+  const links = document.querySelector('.nav-links');
+  if (!links) return;
+  links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+  links.style.flexDirection = 'column';
+  links.style.position = 'absolute';
+  links.style.top = '60px'; links.style.left = '0'; links.style.right = '0';
+  links.style.background = 'rgba(8,10,15,0.98)';
+  links.style.padding = '1.5rem';
+  links.style.borderBottom = '1px solid #1e2535';
+  links.style.backdropFilter = 'blur(20px)';
+});
+
+/* ── ACTIVE NAV LINK ── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
