@@ -550,9 +550,9 @@
     <span class="line2">Maciel<span class="typed-cursor">_</span></span>
   </h1>
   <p class="hero-desc">
-    <span data-i18n="hero_desc1">Construindo <strong>sistemas backend robustos</strong> com Java &amp; Spring Boot.</span><br/>
-    <span data-i18n="hero_desc2">Apaixonado por <strong>arquitetura limpa</strong>, APIs REST</span><br/>
-    <span data-i18n="hero_desc3">e soluções escaláveis que realmente funcionam.</span>
+    <span data-i18n="hero_desc1">De engenharia civil ao backend — construindo sistemas que funcionam.</span><br/>
+    <span data-i18n="hero_desc2"><strong>Java + Spring Boot</strong> como stack principal.</span><br/>
+    <span data-i18n="hero_desc3">Projeto em produção com JWT, RBAC e integração com Discord.</span>
   </p>
   <div class="hero-cta">
     <a href="#projects" class="btn btn-primary" data-i18n="hero_btn">Ver Projetos →</a>
@@ -572,21 +572,24 @@
     <div class="about-text reveal-left">
       <p>
         <span data-i18n="about_p1">Sou <strong>Pedro Henrique Maciel</strong>, desenvolvedor backend baseado no
-        <strong>Rio de Janeiro, Brasil</strong>, focado em construir
-        sistemas bem estruturados e de alta qualidade.</span>
+        <strong>Rio de Janeiro, Brasil</strong>.</span>
       </p>
       <p>
-        <span data-i18n="about_p2">Minha stack principal gira em torno de <strong>Java</strong> e <strong>Spring Boot</strong>,
-        com experiência sólida em <strong>APIs REST</strong>, bancos relacionais
-        com <strong>PostgreSQL</strong> e arquiteturas orientadas a microsserviços.</span>
+        <span data-i18n="about_p2">Vim da engenharia civil e da gestão de segurança do trabalho em ambiente hospitalar —
+        onde aprendi que sistemas mal projetados têm consequências reais. Trago esse mesmo
+        rigor para o software: cada decisão de arquitetura importa, cada ponto de falha
+        precisa ser previsto.</span>
       </p>
       <p>
-        <span data-i18n="about_p3">Me importo profundamente com <strong>código limpo</strong>, princípios SOLID e escrever
-        software fácil de ler, testar e manter — não apenas software que funciona.</span>
+        <span data-i18n="about_p3">Minha stack principal é <strong>Java + Spring Boot</strong>, com experiência sólida em
+        <strong>APIs REST</strong>, <strong>PostgreSQL</strong> e autenticação JWT. Tenho também
+        background em <strong>Node.js e TypeScript</strong> pelo frontend do meu projeto
+        principal em produção.</span>
       </p>
       <p>
-        <span data-i18n="about_p4">Atualmente expandindo para <strong>DevOps</strong>, Docker e infraestrutura cloud
-        para me tornar um engenheiro backend mais completo.</span>
+        <span data-i18n="about_p4">Me importo com código que é fácil de ler, testar e manter — não apenas código que
+        funciona hoje. Atualmente expandindo para <strong>DevOps</strong>, Docker e
+        infraestrutura cloud.</span>
       </p>
     </div>
     <div class="code-block reveal-right">
@@ -602,6 +605,9 @@
   <span class="kw">private final</span> String role =
     <span class="str">"Backend Developer"</span>;
 
+  <span class="kw">private final</span> String background =
+    <span class="str">"Civil Engineer → Safety Tech → Dev"</span>;
+
   <span class="kw">private final</span> String[] stack = {
     <span class="str">"Java"</span>, <span class="str">"Spring Boot"</span>,
     <span class="str">"PostgreSQL"</span>, <span class="str">"Node.js"</span>,
@@ -610,11 +616,11 @@
 
   <span class="kw">private final</span> String[] values = {
     <span class="str">"Clean Code"</span>, <span class="str">"SOLID"</span>,
-    <span class="str">"RESTful Design"</span>, <span class="str">"TDD"</span>
+    <span class="str">"RESTful Design"</span>, <span class="str">"Risk Thinking"</span>
   };
 
   <span class="kw">public</span> String <span class="fn">getMotivation</span>() {
-    <span class="kw">return</span> <span class="str">"Evolving every day."</span>;
+    <span class="kw">return</span> <span class="str">"Sistemas que funcionam de verdade."</span>;
   }
 }</pre>
       </div>
@@ -785,8 +791,23 @@
           </div>
         </div>
         <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h6_label">Pacotes</div>
+          <div style="font-size:0.72rem;color:var(--muted);line-height:1.7;font-family:'JetBrains Mono',monospace;">
+            <span style="color:var(--accent)">auth</span> · <span style="color:var(--accent)">pilots</span> · <span style="color:var(--accent)">flights</span> · <span style="color:var(--accent)">reports</span><br/>
+            <span style="color:var(--muted2)">documents</span> · <span style="color:var(--muted2)">discord</span> · <span style="color:var(--muted2)">config</span> · <span style="color:var(--muted2)">common</span>
+          </div>
+        </div>
+        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
           <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h5_label">Página Pública</div>
           <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="feat_h5"><a href="https://air-ops-system-web.vercel.app/status" target="_blank" style="color:var(--accent);text-decoration:none;">/status</a> — roster, métricas e atividade da unidade sem autenticação</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h6_label">Estrutura</div>
+          <div style="font-size:0.72rem;color:var(--text);line-height:1.7;font-family:'JetBrains Mono',monospace;">
+            <span style="color:var(--accent)">auth/</span> · <span style="color:var(--accent)">pilots/</span> · <span style="color:var(--accent)">flights/</span><br/>
+            <span style="color:var(--muted)">reports/</span> · <span style="color:var(--muted)">documents/</span> · <span style="color:var(--muted)">discord/</span><br/>
+            <span style="color:var(--muted2)">config/</span> · <span style="color:var(--muted2)">common/</span>
+          </div>
         </div>
         <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
           <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;">Swagger</div>
@@ -798,13 +819,26 @@
       <div style="padding:1.8rem 2.5rem;border-top:1px solid var(--border);">
         <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="feat_endpoints_label">// Endpoints principais</div>
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(34,211,165,0.08);border:1px solid rgba(34,211,165,0.2);border-radius:3px;color:var(--green);">POST /auth/register <span style="opacity:0.5;font-size:0.58rem;">público</span></span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(34,211,165,0.08);border:1px solid rgba(34,211,165,0.2);border-radius:3px;color:var(--green);">POST /auth/register</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(34,211,165,0.08);border:1px solid rgba(34,211,165,0.2);border-radius:3px;color:var(--green);">POST /auth/login</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">GET /me</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">GET /pilots</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">GET /pilots/{id}</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(250,180,50,0.08);border:1px solid rgba(250,180,50,0.2);border-radius:3px;color:#fbbf24;">PUT /pilots/{id}</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(231,70,70,0.08);border:1px solid rgba(231,70,70,0.2);border-radius:3px;color:#f87171;">DELETE /pilots/{id}</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">GET /pilots/{id}</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(250,180,50,0.08);border:1px solid rgba(250,180,50,0.2);border-radius:3px;color:#fbbf24;">PUT /pilots/{id}</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(231,70,70,0.08);border:1px solid rgba(231,70,70,0.2);border-radius:3px;color:#f87171;">DELETE /pilots/{id}</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">POST /flights</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">POST /flights/{id}/review</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">GET /reports</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">POST /reports/{id}/review</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(231,70,70,0.08);border:1px solid rgba(231,70,70,0.2);border-radius:3px;color:#f87171;">DELETE /users/{id}</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(231,70,70,0.08);border:1px solid rgba(231,70,70,0.2);border-radius:3px;color:#f87171;">DELETE /flights/{id}</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(231,70,70,0.08);border:1px solid rgba(231,70,70,0.2);border-radius:3px;color:#f87171;">DELETE /reports/{id}</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(231,70,70,0.08);border:1px solid rgba(231,70,70,0.2);border-radius:3px;color:#f87171;">DELETE /flights/{id}</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(231,70,70,0.08);border:1px solid rgba(231,70,70,0.2);border-radius:3px;color:#f87171;">DELETE /reports/{id}</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">GET /documents</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">GET /flights/{id}</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(250,180,50,0.08);border:1px solid rgba(250,180,50,0.2);border-radius:3px;color:#fbbf24;">PUT /flights/{id}</span>
@@ -818,13 +852,14 @@
       <div style="padding:0 2.5rem 2rem;border-top:1px solid var(--border);margin-top:1.5rem;">
         <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin:1.5rem 0 1rem;" data-i18n="feat_ranks_label">// Hierarquia de Ranks</div>
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:rgba(79,142,247,0.15);border:1px solid rgba(79,142,247,0.35);border-radius:3px;color:var(--accent);">LEAD <span style="opacity:0.6">lv.10</span></span>
-          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25);border-radius:3px;color:var(--accent);">SUPERVISOR <span style="opacity:0.6">lv.6</span></span>
-          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">INSTRUCTOR <span style="opacity:0.6">lv.5</span></span>
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:rgba(79,142,247,0.15);border:1px solid rgba(79,142,247,0.35);border-radius:3px;color:var(--accent);">LEAD <span style="opacity:0.6">lv.10 · imune</span></span>
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25);border-radius:3px;color:var(--accent);">SUPERVISOR <span style="opacity:0.6">lv.6 · imune</span></span>
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">INSTRUCTOR <span style="opacity:0.6">lv.5 · imune</span></span>
           <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">PILOT_SENIOR <span style="opacity:0.6">lv.4</span></span>
           <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">PILOT_PLENO <span style="opacity:0.6">lv.3</span></span>
           <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">PILOT_STANDARD <span style="opacity:0.6">lv.2</span></span>
           <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">TRAINEE <span style="opacity:0.6">lv.1</span></span>
+          <span style="font-size:0.55rem;color:var(--muted2);align-self:center;font-family:'JetBrains Mono',monospace;width:100%;margin-top:0.2rem;" data-i18n="feat_ranks_note">· imune = sem promoção/rebaixamento automático por score</span>
         </div>
       </div>
     </div>
@@ -1231,16 +1266,16 @@ const translations = {
     nav_contact: 'Contato', nav_status: 'Aberto a oportunidades',
     // hero
     hero_tag: '// Backend Engineer',
-    hero_desc1: 'Construindo <strong>sistemas backend robustos</strong> com Java &amp; Spring Boot.',
-    hero_desc2: 'Apaixonado por <strong>arquitetura limpa</strong>, APIs REST',
-    hero_desc3: 'e soluções escaláveis que realmente funcionam.',
+    hero_desc1: 'De engenharia civil ao backend — construindo sistemas que funcionam.',
+    hero_desc2: '<strong>Java + Spring Boot</strong> como stack principal.',
+    hero_desc3: 'Projeto em produção com JWT, RBAC e integração com Discord.',
     hero_btn: 'Ver Projetos →', scroll_txt: 'Role',
     // about
     about_label: '// 01 — Sobre', about_title: 'Quem Sou',
-    about_p1: 'Sou <strong>Pedro Henrique Maciel</strong>, desenvolvedor backend baseado no <strong>Rio de Janeiro, Brasil</strong>, focado em construir sistemas bem estruturados e de alta qualidade.',
-    about_p2: 'Minha stack principal gira em torno de <strong>Java</strong> e <strong>Spring Boot</strong>, com experiência sólida em <strong>APIs REST</strong>, bancos relacionais com <strong>PostgreSQL</strong> e arquiteturas orientadas a microsserviços.',
-    about_p3: 'Me importo profundamente com <strong>código limpo</strong>, princípios SOLID e escrever software fácil de ler, testar e manter — não apenas software que funciona.',
-    about_p4: 'Atualmente expandindo para <strong>DevOps</strong>, Docker e infraestrutura cloud para me tornar um engenheiro backend mais completo.',
+    about_p1: 'Sou <strong>Pedro Henrique Maciel</strong>, desenvolvedor backend baseado no <strong>Rio de Janeiro, Brasil</strong>.',
+    about_p2: 'Vim da engenharia civil e da gestão de segurança do trabalho em ambiente hospitalar — onde aprendi que sistemas mal projetados têm consequências reais. Trago esse mesmo rigor para o software: cada decisão de arquitetura importa, cada ponto de falha precisa ser previsto.',
+    about_p3: 'Minha stack principal é <strong>Java + Spring Boot</strong>, com experiência sólida em <strong>APIs REST</strong>, <strong>PostgreSQL</strong> e autenticação JWT. Tenho também background em <strong>Node.js e TypeScript</strong> pelo frontend do meu projeto principal em produção.',
+    about_p4: 'Me importo com código que é fácil de ler, testar e manter — não apenas código que funciona hoje. Atualmente expandindo para <strong>DevOps</strong>, Docker e infraestrutura cloud.',
     // skills
     skills_title: 'Tecnologias',
     skill_db: 'Bancos de Dados', skill_db_desc: 'Bancos relacionais, modelagem e otimização de queries.',
@@ -1258,7 +1293,7 @@ const translations = {
     feat_h2_label: 'Hierarquia', feat_h2: '7 ranks · TRAINEE → LEAD · imunidade a promoção e rebaixamento automático para ranks ≥ 5',
     feat_h3_label: 'Score Engine',
     feat_h4: 'Documentação completa · JWT integrado · Docs via Google Docs · duração de voo calculada automaticamente',
-    feat_endpoints_label: '// Endpoints principais', feat_ranks_label: '// Hierarquia de Ranks', feat_gallery_label: '// Sistema em Produção',
+    feat_endpoints_label: '// Endpoints principais', feat_ranks_label: '// Hierarquia de Ranks', feat_ranks_note: '· imune = sem promoção/rebaixamento automático por score', feat_gallery_label: '// Sistema em Produção',
     feat_infra_label: '// Infraestrutura de Produção', feat_infra_online: 'Todos os sistemas online',
     feat_infra_back: 'Backend', feat_infra_back_desc: 'Spring Boot · Free tier · Deploy automático via GitHub',
     feat_infra_front: 'Frontend', feat_infra_front_desc: 'Next.js · Edge Network · CI/CD automático',
@@ -1296,15 +1331,15 @@ const translations = {
     nav_about: 'About', nav_projects: 'Projects', nav_brand: 'Brand', nav_featured: 'Air Ops',
     nav_contact: 'Contact', nav_status: 'Open to work',
     hero_tag: '// Backend Engineer',
-    hero_desc1: 'Building <strong>robust backend systems</strong> with Java &amp; Spring Boot.',
-    hero_desc2: 'Passionate about <strong>clean architecture</strong>, REST APIs,',
-    hero_desc3: 'and scalable solutions that actually work.',
+    hero_desc1: 'From civil engineering to backend — building systems that work.',
+    hero_desc2: '<strong>Java + Spring Boot</strong> as main stack.',
+    hero_desc3: 'Project in production with JWT, RBAC and Discord integration.',
     hero_btn: 'View Projects →', scroll_txt: 'Scroll',
     about_label: '// 01 — About', about_title: 'Who I Am',
-    about_p1: "I'm <strong>Pedro Henrique Maciel</strong>, a backend engineer based in <strong>Rio de Janeiro, Brazil</strong>, focused on building well-structured, high-quality systems.",
-    about_p2: 'My main stack revolves around <strong>Java</strong> and <strong>Spring Boot</strong>, with solid experience designing <strong>REST APIs</strong>, relational databases with <strong>PostgreSQL</strong>, and scalable microservice-oriented architectures.',
-    about_p3: 'I care deeply about <strong>clean code</strong>, SOLID principles, and writing software that is easy to read, test, and maintain — not just software that works.',
-    about_p4: 'Currently expanding into <strong>DevOps</strong>, Docker, and cloud infrastructure to become a more complete backend engineer.',
+    about_p1: "I'm <strong>Pedro Henrique Maciel</strong>, a backend developer based in <strong>Rio de Janeiro, Brazil</strong>.",
+    about_p2: 'I come from civil engineering and occupational safety management in a hospital environment — where I learned that poorly designed systems have real consequences. I bring that same rigor to software: every architectural decision matters, every point of failure must be anticipated.',
+    about_p3: 'My main stack is <strong>Java + Spring Boot</strong>, with solid experience in <strong>REST APIs</strong>, <strong>PostgreSQL</strong> and JWT authentication. I also have a background in <strong>Node.js and TypeScript</strong> from the frontend of my main project in production.',
+    about_p4: 'I care about code that is easy to read, test and maintain — not just code that works today. Currently expanding into <strong>DevOps</strong>, Docker and cloud infrastructure.',
     skills_title: 'Tech Stack',
     skill_db: 'Databases', skill_db_desc: 'Relational databases, modeling and query optimization.',
     skill_backend_desc: 'Core stack for building APIs and server-side systems.',
@@ -1319,9 +1354,9 @@ const translations = {
     feat_h1_label: 'Authentication', feat_h1: 'Stateless JWT · Spring Security 7 · <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">@PreAuthorize</code> by role',
     feat_h2_label: 'Hierarchy', feat_h2: '7 ranks · TRAINEE → LEAD · immunity to automatic promotion and demotion for ranks ≥ 5',
     feat_h3_label: 'Score Engine',
-    feat_h4: 'Full docs · integrated JWT · Google Docs links · automatic flight duration calculation',
-    feat_h5_label: 'Public Page', feat_h5: '<a href="https://air-ops-system-web.vercel.app/status" target="_blank" style="color:var(--accent);text-decoration:none;">/status</a> — roster, metrics and unit activity without authentication',
-    feat_endpoints_label: '// Main Endpoints', feat_ranks_label: '// Rank Hierarchy', feat_gallery_label: '// System in Production',
+    feat_h4: 'Full docs · integrated JWT · Google Docs links · auto flight duration · Discord webhook on report review',
+    feat_h6_label: 'Packages', feat_h5_label: 'Public Page', feat_h5: '<a href="https://air-ops-system-web.vercel.app/status" target="_blank" style="color:var(--accent);text-decoration:none;">/status</a> — roster, metrics and unit activity without authentication',
+    feat_endpoints_label: '// Main Endpoints', feat_ranks_label: '// Rank Hierarchy', feat_ranks_note: '· immune = no automatic promotion/demotion by score', feat_gallery_label: '// System in Production',
     feat_infra_label: '// Production Infrastructure', feat_infra_online: 'All systems online',
     feat_infra_back: 'Backend', feat_infra_back_desc: 'Spring Boot · Free tier · Auto-deploy via GitHub',
     feat_infra_front: 'Frontend', feat_infra_front_desc: 'Next.js · Edge Network · Automatic CI/CD',
