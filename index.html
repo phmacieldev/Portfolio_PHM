@@ -524,7 +524,8 @@
     <li><a href="#about" data-i18n="nav_about">Sobre</a></li>
     <li><a href="#skills">Stack</a></li>
     <li><a href="#featured" data-i18n="nav_featured">Air Ops</a></li>
-    <li><a href="#projects" data-i18n="nav_projects">Projetos</a></li>
+    <li><a href="#finance-api" data-i18n="nav_finance">Finance</a></li>
+    <li><a href="#sesmt" data-i18n="nav_sesmt">PGEO</a></li>
     <li><a href="#brand" data-i18n="nav_brand">Marca</a></li>
     <li><a href="#contact" data-i18n="nav_contact">Contato</a></li>
   </ul>
@@ -987,9 +988,447 @@
     </div>
 </section>
 
+<!-- FINANCE API -->
+<section id="finance-api" style="padding:7rem 3rem;background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <p class="section-label reveal-left">// 04 — Finance API</p>
+  <h2 class="section-title reveal" data-i18n="fin_title">Finance API</h2>
+  <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-top:3rem;" class="reveal">
+    <div style="height:3px;background:linear-gradient(90deg,var(--accent),rgba(79,142,247,0.2),transparent);"></div>
+    <div style="padding:2.5rem 2.5rem 0;">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-bottom:1.8rem;">
+        <div>
+          <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.6rem;flex-wrap:wrap;">
+            <span style="font-size:0.62rem;letter-spacing:0.18em;color:var(--accent);text-transform:uppercase;border:1px solid rgba(79,142,247,0.3);padding:0.2rem 0.6rem;border-radius:2px;" data-i18n="fin_badge">SaaS · Multi-Tenant · Em Produção</span>
+            <a href="https://finance-api-sandy-pi.vercel.app" target="_blank" style="font-size:0.62rem;letter-spacing:0.1em;color:var(--green);background:var(--green-dim);border:1px solid rgba(34,211,165,0.2);padding:0.2rem 0.6rem;border-radius:2px;text-decoration:none;">↗ Ver Sistema</a>
+            <span style="font-size:0.62rem;letter-spacing:0.1em;color:var(--green);background:var(--green-dim);border:1px solid rgba(34,211,165,0.2);padding:0.2rem 0.6rem;border-radius:2px;">● <span data-i18n="status_active">Ativo</span></span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;color:var(--text);line-height:1.1;" data-i18n="fin_name">Finance API — SaaS Financeiro</h3>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;letter-spacing:0.04em;" data-i18n="fin_sub">Multi-Tenant · JWT + Refresh Token · Audit Log · Bucket4j · LGPD · DRE · Testcontainers</p>
+        </div>
+        <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+          <a href="https://github.com/phmacieldev/finance-api" target="_blank" class="btn btn-secondary" style="font-size:0.7rem;padding:0.6rem 1.1rem;" data-i18n="fin_btn_back">Backend →</a>
+          <a href="https://github.com/phmacieldev/finance-api-web" target="_blank" class="btn btn-secondary" style="font-size:0.7rem;padding:0.6rem 1.1rem;" data-i18n="fin_btn_front">Frontend →</a>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.85;max-width:780px;margin-bottom:2rem;" data-i18n="fin_desc">
+        SaaS financeiro multi-tenant de nível produção com isolamento completo de dados por empresa via TenantContext thread-local, autenticação JWT com refresh token, log de auditoria em 22 ações distintas, rate limiting sem Redis (Bucket4j), conformidade LGPD (DELETE /me), DRE, conciliação bancária e importação via CSV/XLSX. 87 commits, testes de integração com Testcontainers e CI/CD via GitHub Actions.
+      </p>
+      <div style="margin-bottom:2rem;">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="fin_arch_label">// Arquitetura</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+          <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
+            <div style="font-size:1.4rem;margin-bottom:0.4rem;">🖥️</div>
+            <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;" data-i18n="fin_arch_front">Frontend</div>
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Next.js · TypeScript · Vercel</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+            <div style="font-size:0.6rem;color:var(--accent);letter-spacing:0.1em;">HTTP / REST</div>
+            <div style="font-size:0.9rem;color:var(--accent);">⟷</div>
+            <div style="font-size:0.55rem;color:var(--muted2);">JWT Bearer</div>
+          </div>
+          <div style="background:var(--bg3);padding:1.2rem;text-align:center;border:1px solid rgba(79,142,247,0.2);">
+            <div style="font-size:1.4rem;margin-bottom:0.4rem;">⚙️</div>
+            <div style="font-size:0.7rem;font-weight:600;color:var(--accent);margin-bottom:0.3rem;">Spring Boot API</div>
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Java 21 · TenantContext</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;">JPA / SQL</div>
+            <div style="font-size:0.9rem;color:var(--muted);">⟷</div>
+            <div style="font-size:0.55rem;color:var(--muted2);">Flyway</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
+            <div style="font-size:1.4rem;margin-bottom:0.4rem;">🗄️</div>
+            <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">PostgreSQL 16</div>
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Supabase · ACID</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;">GitHub Actions</div>
+            <div style="font-size:0.9rem;color:var(--muted);">→</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
+            <div style="font-size:1.4rem;margin-bottom:0.4rem;">🚀</div>
+            <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">CI/CD</div>
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Render · Auto-deploy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border-top:1px solid var(--border);">
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="fin_h1_label">Multi-Tenancy</div>
+        <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="fin_h1">TenantContext thread-local · isolamento total por empresa · JWT filter popula o tenant a cada request</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="fin_h2_label">Autenticação</div>
+        <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="fin_h2">JWT + refresh token · Spring Security · <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">@PreAuthorize</code> por role</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="fin_h3_label">Audit Log</div>
+        <div style="font-size:0.78rem;color:var(--text);line-height:1.7;">
+          <code style="font-size:0.68rem;color:var(--green);background:rgba(34,211,165,0.08);padding:0.1rem 0.3rem;border-radius:2px;display:block;margin-bottom:0.6rem;">22 ações registradas</code>
+          <div style="font-size:0.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">quem · o quê · quando · IP de origem</div>
+        </div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="fin_h4_label">Rate Limiting</div>
+        <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="fin_h4">Bucket4j sem Redis · por IP · protege login e endpoints críticos sem dependências externas</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="fin_h5_label">LGPD</div>
+        <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="fin_h5"><code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">DELETE /me</code> · exclusão completa de dados · validação CPF/CNPJ</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="fin_h6_label">Relatórios</div>
+        <div style="font-size:0.72rem;color:var(--text);line-height:1.7;font-family:'JetBrains Mono',monospace;">
+          <span style="color:var(--accent)">DRE</span> · <span style="color:var(--accent)">Conciliação</span> · <span style="color:var(--accent)">Dashboard</span><br/>
+          <span style="color:var(--muted)">Import CSV</span> · <span style="color:var(--muted)">Import XLSX</span><br/>
+          <span style="color:var(--muted2);font-size:0.62rem;">Apache POI · OpenCSV</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:1.8rem 2.5rem;border-top:1px solid var(--border);">
+      <div style="margin-bottom:2rem;">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="fin_roles_label">// Roles / Permissões</div>
+        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.8rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:3px;color:var(--accent);">PLATFORM_ADMIN</span>
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--text);">CEO</span>
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">OWNER</span>
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted2);">USER</span>
+        </div>
+      </div>
+      <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="fin_endpoints_label">// Endpoints Principais</div>
+      <div style="display:grid;gap:0.5rem;">
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(34,211,165,0.12);border:1px solid rgba(34,211,165,0.3);border-radius:2px;color:var(--green);min-width:46px;text-align:center;">POST</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/auth/login</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="fin_ep1">JWT + refresh token</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(34,211,165,0.12);border:1px solid rgba(34,211,165,0.3);border-radius:2px;color:var(--green);min-width:46px;text-align:center;">POST</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/auth/register</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="fin_ep2">Cadastro com CNPJ/CPF validado</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/reports/income-statement</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="fin_ep3">DRE por período</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/reports/reconciliation</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="fin_ep4">Conciliação bancária</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/dashboard</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="fin_ep5">Métricas e resumo financeiro</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:2px;color:#f87171;min-width:46px;text-align:center;">DELETE</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/me</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="fin_ep6">LGPD · exclusão completa de dados</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(34,211,165,0.12);border:1px solid rgba(34,211,165,0.3);border-radius:2px;color:var(--green);min-width:46px;text-align:center;">POST</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/expenses/import</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="fin_ep7">Importação CSV / XLSX</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:1.8rem 2.5rem;border-top:1px solid var(--border);">
+      <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1.2rem;" data-i18n="fin_gallery_label">// Sistema em Produção</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;">
+        <div style="grid-column:span 2;background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;">
+          <div style="font-size:2rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.6rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Dashboard</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">DRE</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Transações</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Conciliação</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Importação</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Audit Log</div>
+        </div>
+      </div>
+      <div style="margin-top:1rem;padding:0.8rem 1rem;background:rgba(79,142,247,0.05);border:1px dashed rgba(79,142,247,0.2);border-radius:4px;text-align:center;">
+        <span style="font-size:0.62rem;color:var(--muted2);letter-spacing:0.08em;" data-i18n="fin_screenshots_note">📸 Screenshots serão adicionados — envie as capturas do sistema</span>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--border);">
+      <div style="padding:1.2rem 1.8rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;" data-i18n="fin_infra_label">// Infraestrutura de Produção</div>
+        <div style="display:flex;align-items:center;gap:0.4rem;">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse-green 2s infinite;"></span>
+          <span style="font-size:0.62rem;color:var(--green);letter-spacing:0.08em;" data-i18n="fin_infra_online">Todos os sistemas online</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);">
+        <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">☁️</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="fin_infra_back">Backend</div></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">Render</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="fin_infra_back_desc">Spring Boot · Free tier · Deploy automático via GitHub</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">▲</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="fin_infra_front">Frontend</div></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">Vercel</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="fin_infra_front_desc">Next.js · Edge Network · CI/CD automático</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🗄️</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="fin_infra_db">Database</div></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">Supabase</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="fin_infra_db_desc">PostgreSQL 16 gerenciado · Connection pooling</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">✅</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="fin_infra_ci">CI/CD</div></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">GitHub Actions</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="fin_infra_ci_desc">Testcontainers · Testes de integração · Deploy automático</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🔁</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="fin_infra_ping">Keep-alive</div></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">UptimeRobot · /actuator/health</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="fin_infra_ping_desc">Ping periódico evita idle do banco e cold start no Render</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:1.5rem 2.5rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:0.5rem;">
+      <span class="stack-badge">Java 21</span><span class="stack-badge">Spring Boot 4</span><span class="stack-badge">Spring Security</span><span class="stack-badge">PostgreSQL 16</span><span class="stack-badge">Flyway</span><span class="stack-badge">JWT</span><span class="stack-badge">Testcontainers</span><span class="stack-badge">GitHub Actions</span><span class="stack-badge">Docker</span><span class="stack-badge">Next.js</span><span class="stack-badge">TypeScript</span><span class="stack-badge">Bucket4j</span><span class="stack-badge">Apache POI</span>
+    </div>
+  </div>
+</section>
+
+<!-- PGEO SESMT -->
+<section id="sesmt" style="padding:7rem 3rem;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <p class="section-label reveal-left">// 05 — PGEO · SESMT</p>
+  <h2 class="section-title reveal" data-i18n="pgeo_title">PGEO — SESMT</h2>
+  <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-top:3rem;" class="reveal">
+    <div style="height:3px;background:linear-gradient(90deg,var(--accent),rgba(79,142,247,0.2),transparent);"></div>
+    <div style="padding:2.5rem 2.5rem 0;">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-bottom:1.8rem;">
+        <div>
+          <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.6rem;flex-wrap:wrap;">
+            <span style="font-size:0.62rem;letter-spacing:0.18em;color:var(--accent);text-transform:uppercase;border:1px solid rgba(79,142,247,0.3);padding:0.2rem 0.6rem;border-radius:2px;" data-i18n="pgeo_badge">Sistema Real em Produção</span>
+            <span style="font-size:0.62rem;letter-spacing:0.1em;color:var(--muted);border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:2px;" data-i18n="pgeo_context">Hospital · +1.000 funcionários</span>
+            <span style="font-size:0.62rem;letter-spacing:0.1em;color:var(--green);background:var(--green-dim);border:1px solid rgba(34,211,165,0.2);padding:0.2rem 0.6rem;border-radius:2px;">● <span data-i18n="status_active">Ativo</span></span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;color:var(--text);line-height:1.1;" data-i18n="pgeo_name">PGEO — Gestão de Saúde Ocupacional</h3>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;letter-spacing:0.04em;" data-i18n="pgeo_sub">SESMT Hospitalar · Spring MVC · Thymeleaf · WebSocket STOMP · Docker · nginx SSL</p>
+        </div>
+        <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+          <a href="https://github.com/phmacieldev/sistema-sesmt" target="_blank" class="btn btn-secondary" style="font-size:0.7rem;padding:0.6rem 1.1rem;" data-i18n="pgeo_btn_github">GitHub →</a>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.85;max-width:780px;margin-bottom:2rem;" data-i18n="pgeo_desc">
+        Sistema web completo de gestão do SESMT de um hospital com mais de 1.000 funcionários. Gerencia agendamentos de exames ocupacionais e ASO com atualizações em tempo real via WebSocket STOMP, atestados médicos com controle de absenteísmo (alerta automático INSS), calendário semanal visual, geração de documentos em PDF e Excel, e trilha de auditoria completa de todas as ações.
+      </p>
+      <div style="margin-bottom:2rem;">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="pgeo_arch_label">// Arquitetura</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+          <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
+            <div style="font-size:1.4rem;margin-bottom:0.4rem;">🌐</div>
+            <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;" data-i18n="pgeo_arch_browser">Navegador</div>
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">HTML · Thymeleaf</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+            <div style="font-size:0.6rem;color:var(--accent);letter-spacing:0.1em;">HTTPS</div>
+            <div style="font-size:0.9rem;color:var(--accent);">⟷</div>
+            <div style="font-size:0.55rem;color:var(--muted2);">nginx SSL</div>
+          </div>
+          <div style="background:var(--bg3);padding:1.2rem;text-align:center;border:1px solid rgba(79,142,247,0.2);">
+            <div style="font-size:1.4rem;margin-bottom:0.4rem;">⚙️</div>
+            <div style="font-size:0.7rem;font-weight:600;color:var(--accent);margin-bottom:0.3rem;">Spring MVC</div>
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Java · Thymeleaf · WS</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;">JPA / SQL</div>
+            <div style="font-size:0.9rem;color:var(--muted);">⟷</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
+            <div style="font-size:1.4rem;margin-bottom:0.4rem;">🗄️</div>
+            <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">PostgreSQL 16</div>
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Docker · ACID</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;">Docs</div>
+            <div style="font-size:0.9rem;color:var(--muted);">→</div>
+          </div>
+          <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
+            <div style="font-size:1.4rem;margin-bottom:0.4rem;">📄</div>
+            <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">PDF / Excel</div>
+            <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">iText · Apache POI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border-top:1px solid var(--border);">
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h1_label">Agendamentos</div>
+        <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h1">Dashboard com filtros por mês, funcionário e estabelecimento · calendário semanal visual · guias em PDF</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h2_label">ASO em Tempo Real</div>
+        <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h2">Status do ASO atualizado via <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">WebSocket STOMP</code> sem necessidade de reload</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h3_label">Atestados</div>
+        <div style="font-size:0.78rem;color:var(--text);line-height:1.7;">
+          <code style="font-size:0.68rem;color:var(--green);background:rgba(34,211,165,0.08);padding:0.1rem 0.3rem;border-radius:2px;display:block;margin-bottom:0.6rem;">Absenteísmo 60 dias · alerta INSS &gt; 15 dias</code>
+          <div style="font-size:0.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">totais por setor e tipo de afastamento</div>
+        </div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h4_label">Funcionários</div>
+        <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h4">Histórico completo com mudanças de cargo, agendamentos e atestados · edição inline · auditoria de alterações</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h5_label">Segurança</div>
+        <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h5">Roles ADMIN / OPERADOR · sessão expira em 4h · audit trail completo · nginx com certificado TLS</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+        <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h6_label">Documentos</div>
+        <div style="font-size:0.72rem;color:var(--text);line-height:1.7;font-family:'JetBrains Mono',monospace;">
+          <span style="color:var(--accent)">PDF</span> via iText · <span style="color:var(--accent)">Excel</span> via Apache POI<br/>
+          <span style="color:var(--muted)">Guias de exame</span> · <span style="color:var(--muted)">relatórios</span><br/>
+          <span style="color:var(--muted2);font-size:0.62rem;">sangue: limite 10 exames/dia</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:1.8rem 2.5rem;border-top:1px solid var(--border);">
+      <div style="margin-bottom:2rem;">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="pgeo_roles_label">// Roles / Permissões</div>
+        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.8rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:3px;color:var(--accent);">ADMIN</span>
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">OPERADOR</span>
+        </div>
+      </div>
+      <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="pgeo_routes_label">// Módulos Principais</div>
+      <div style="display:grid;gap:0.5rem;">
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/dashboard</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r1">Painel geral com filtros e estatísticas</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/agendamentos</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r2">Calendário semanal · filtros · PDF</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/atestados</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r3">Atestados · absenteísmo · alerta INSS</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/funcionarios</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r4">Perfis · histórico completo · edição inline</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(34,211,165,0.12);border:1px solid rgba(34,211,165,0.3);border-radius:2px;color:var(--green);min-width:46px;text-align:center;">WS</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/ws</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r5">STOMP WebSocket · status ASO em tempo real</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg3);border-radius:4px;border:1px solid var(--border);">
+          <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+          <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/admin</code>
+          <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r6">Gestão de usuários · audit trail</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:1.8rem 2.5rem;border-top:1px solid var(--border);">
+      <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1.2rem;" data-i18n="pgeo_gallery_label">// Sistema em Produção</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;">
+        <div style="grid-column:span 2;background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;">
+          <div style="font-size:2rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.6rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Dashboard</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Calendário</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">ASO</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Atestados</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Funcionários</div>
+        </div>
+        <div style="background:var(--bg3);border:1px dashed var(--border2);border-radius:6px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;">
+          <div style="font-size:1.5rem;opacity:0.2;">📸</div>
+          <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-align:center;text-transform:uppercase;">Relatórios</div>
+        </div>
+      </div>
+      <div style="margin-top:1rem;padding:0.8rem 1rem;background:rgba(79,142,247,0.05);border:1px dashed rgba(79,142,247,0.2);border-radius:4px;text-align:center;">
+        <span style="font-size:0.62rem;color:var(--muted2);letter-spacing:0.08em;" data-i18n="pgeo_screenshots_note">📸 Screenshots serão adicionados — envie as capturas do sistema</span>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--border);">
+      <div style="padding:1.2rem 1.8rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_label">// Infraestrutura de Produção</div>
+        <div style="display:flex;align-items:center;gap:0.4rem;">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse-green 2s infinite;"></span>
+          <span style="font-size:0.62rem;color:var(--green);letter-spacing:0.08em;" data-i18n="pgeo_infra_online">Sistema online</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);">
+        <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🐳</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_deploy">Deploy</div></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">Docker Compose</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_deploy_desc">Ambiente completo em containers · multi-serviço</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🔒</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_ssl">Segurança</div></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">nginx + TLS</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_ssl_desc">Certificado TLS · proxy reverso · HTTPS forçado</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🗄️</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_db">Database</div></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">PostgreSQL 16</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_db_desc">Container dedicado · volumes persistentes · backups</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🔄</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_update">Atualizações</div></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">autopull.sh</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_update_desc">Script de deploy automatizado via webhook do GitHub</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:1.5rem 2.5rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:0.5rem;">
+      <span class="stack-badge">Java</span><span class="stack-badge">Spring Boot 3.3</span><span class="stack-badge">Spring MVC</span><span class="stack-badge">Thymeleaf</span><span class="stack-badge">PostgreSQL 16</span><span class="stack-badge">WebSocket STOMP</span><span class="stack-badge">Docker</span><span class="stack-badge">nginx</span><span class="stack-badge">iText</span><span class="stack-badge">Apache POI</span>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section id="projects">
-  <p class="section-label reveal-left" data-i18n="proj_label">// 04 — Projetos</p>
+  <p class="section-label reveal-left" data-i18n="proj_label">// 06 — Projetos</p>
   <h2 class="section-title reveal" data-i18n="proj_title">Outros Projetos</h2>
   <div class="projects-grid">
 
@@ -1039,36 +1478,6 @@
 
     <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
       <div class="project-num">03 /</div>
-      <div class="project-status status-done">✓ <span data-i18n="status_done">Concluído</span></div>
-      <div class="project-title">🔍 FIPE Table Search</div>
-      <p class="project-desc"><span data-i18n="proj2_desc">Consulta de preços de veículos integrando a API pública FIPE. Busca por marca, modelo e ano com apresentação limpa dos dados.</span></p>
-      <div class="project-footer">
-        <div class="project-stack">
-          <span class="stack-badge">Java</span>
-          <span class="stack-badge">Spring Boot</span>
-          <span class="stack-badge">REST API</span>
-        </div>
-        <a href="https://github.com/phmacieldev/Table-Fipe-Search" target="_blank" class="project-link"><span data-i18n="proj_view">Ver →</span></a>
-      </div>
-    </div>
-
-    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
-      <div class="project-num">04 /</div>
-      <div class="project-status status-done">✓ <span data-i18n="status_done">Concluído</span></div>
-      <div class="project-title">👥 Gestão de Vagas</div>
-      <p class="project-desc"><span data-i18n="proj3_desc">Sistema de gestão de vagas com papéis distintos para candidatos e recrutadores, fluxo de candidatura e gerenciamento de dados.</span></p>
-      <div class="project-footer">
-        <div class="project-stack">
-          <span class="stack-badge">Java</span>
-          <span class="stack-badge">Spring Boot</span>
-          <span class="stack-badge">PostgreSQL</span>
-        </div>
-        <a href="https://github.com/phmacieldev/Gestao_Vagas" target="_blank" class="project-link"><span data-i18n="proj_view">Ver →</span></a>
-      </div>
-    </div>
-
-    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
-      <div class="project-num">05 /</div>
       <div class="project-status status-active">● <span data-i18n="status_wip">Em Desenvolvimento</span></div>
       <div class="project-title">✅ Gamified TodoList</div>
       <p class="project-desc"><span data-i18n="proj4_desc">Plataforma de produtividade com mecânicas de recompensa e progressão. Transforma tarefas diárias em experiência engajante com pontos e metas.</span></p>
@@ -1082,7 +1491,7 @@
     </div>
 
     <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
-      <div class="project-num">06 /</div>
+      <div class="project-num">04 /</div>
       <div class="project-status status-done">✓ <span data-i18n="status_done">Concluído</span></div>
       <div class="project-title">🏺 Beca Ateliê</div>
       <p class="project-desc"><span data-i18n="proj5_desc">Site elegante para uma marca de cerâmicas artesanais. Focado em apresentação visual e interface limpa para destacar os produtos.</span></p>
@@ -1307,6 +1716,7 @@ const translations = {
   pt: {
     // nav
     nav_about: 'Sobre', nav_projects: 'Projetos', nav_brand: 'Marca', nav_featured: 'Air Ops',
+    nav_finance: 'Finance', nav_sesmt: 'PGEO',
     nav_contact: 'Contato', nav_status: 'Aberto a oportunidades',
     // hero
     hero_tag: '// Backend Engineer',
@@ -1344,18 +1754,59 @@ const translations = {
     feat_infra_db: 'Database', feat_infra_db_desc: 'PostgreSQL gerenciado · Connection pooling',
     feat_infra_ping: 'Keep-alive', feat_infra_ping_title: 'UptimeRobot · /actuator/health', feat_infra_ping_desc: 'UptimeRobot faz ping periódico evitando idle do banco e cold start no Render',
     // projects
-    proj_label: '// 04 — Projetos', proj_title: 'Outros Projetos',
+    // finance api
+    fin_title: 'Finance API', fin_badge: 'SaaS · Multi-Tenant · Em Produção',
+    fin_name: 'Finance API — SaaS Financeiro', fin_sub: 'Multi-Tenant · JWT + Refresh Token · Audit Log · Bucket4j · LGPD · DRE · Testcontainers',
+    fin_btn_back: 'Backend →', fin_btn_front: 'Frontend →',
+    fin_desc: 'SaaS financeiro multi-tenant de nível produção com isolamento completo de dados por empresa via TenantContext thread-local, autenticação JWT com refresh token, log de auditoria em 22 ações distintas, rate limiting sem Redis (Bucket4j), conformidade LGPD (DELETE /me), DRE, conciliação bancária e importação via CSV/XLSX. 87 commits, testes de integração com Testcontainers e CI/CD via GitHub Actions.',
+    fin_arch_label: '// Arquitetura', fin_arch_front: 'Frontend',
+    fin_h1_label: 'Multi-Tenancy', fin_h1: 'TenantContext thread-local · isolamento total por empresa · JWT filter popula o tenant a cada request',
+    fin_h2_label: 'Autenticação', fin_h2: 'JWT + refresh token · Spring Security · <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">@PreAuthorize</code> por role',
+    fin_h3_label: 'Audit Log', fin_h4_label: 'Rate Limiting', fin_h4: 'Bucket4j sem Redis · por IP · protege login e endpoints críticos sem dependências externas',
+    fin_h5_label: 'LGPD', fin_h5: '<code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">DELETE /me</code> · exclusão completa de dados · validação CPF/CNPJ',
+    fin_h6_label: 'Relatórios',
+    fin_roles_label: '// Roles / Permissões', fin_endpoints_label: '// Endpoints Principais',
+    fin_ep1: 'JWT + refresh token', fin_ep2: 'Cadastro com CNPJ/CPF validado', fin_ep3: 'DRE por período',
+    fin_ep4: 'Conciliação bancária', fin_ep5: 'Métricas e resumo financeiro', fin_ep6: 'LGPD · exclusão completa de dados', fin_ep7: 'Importação CSV / XLSX',
+    fin_gallery_label: '// Sistema em Produção', fin_screenshots_note: '📸 Screenshots serão adicionados — envie as capturas do sistema',
+    fin_infra_label: '// Infraestrutura de Produção', fin_infra_online: 'Todos os sistemas online',
+    fin_infra_back: 'Backend', fin_infra_back_desc: 'Spring Boot · Free tier · Deploy automático via GitHub',
+    fin_infra_front: 'Frontend', fin_infra_front_desc: 'Next.js · Edge Network · CI/CD automático',
+    fin_infra_db: 'Database', fin_infra_db_desc: 'PostgreSQL 16 gerenciado · Connection pooling',
+    fin_infra_ci: 'CI/CD', fin_infra_ci_desc: 'Testcontainers · Testes de integração · Deploy automático',
+    fin_infra_ping: 'Keep-alive', fin_infra_ping_desc: 'Ping periódico evita idle do banco e cold start no Render',
+    // pgeo sesmt
+    pgeo_title: 'PGEO — SESMT', pgeo_badge: 'Sistema Real em Produção', pgeo_context: 'Hospital · +1.000 funcionários',
+    pgeo_name: 'PGEO — Gestão de Saúde Ocupacional', pgeo_sub: 'SESMT Hospitalar · Spring MVC · Thymeleaf · WebSocket STOMP · Docker · nginx SSL',
+    pgeo_btn_github: 'GitHub →',
+    pgeo_desc: 'Sistema web completo de gestão do SESMT de um hospital com mais de 1.000 funcionários. Gerencia agendamentos de exames ocupacionais e ASO com atualizações em tempo real via WebSocket STOMP, atestados médicos com controle de absenteísmo (alerta automático INSS), calendário semanal visual, geração de documentos em PDF e Excel, e trilha de auditoria completa de todas as ações.',
+    pgeo_arch_label: '// Arquitetura', pgeo_arch_browser: 'Navegador',
+    pgeo_h1_label: 'Agendamentos', pgeo_h1: 'Dashboard com filtros por mês, funcionário e estabelecimento · calendário semanal visual · guias em PDF',
+    pgeo_h2_label: 'ASO em Tempo Real', pgeo_h2: 'Status do ASO atualizado via <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">WebSocket STOMP</code> sem necessidade de reload',
+    pgeo_h3_label: 'Atestados', pgeo_h4_label: 'Funcionários', pgeo_h4: 'Histórico completo com mudanças de cargo, agendamentos e atestados · edição inline · auditoria de alterações',
+    pgeo_h5_label: 'Segurança', pgeo_h5: 'Roles ADMIN / OPERADOR · sessão expira em 4h · audit trail completo · nginx com certificado TLS',
+    pgeo_h6_label: 'Documentos',
+    pgeo_roles_label: '// Roles / Permissões', pgeo_routes_label: '// Módulos Principais',
+    pgeo_r1: 'Painel geral com filtros e estatísticas', pgeo_r2: 'Calendário semanal · filtros · PDF',
+    pgeo_r3: 'Atestados · absenteísmo · alerta INSS', pgeo_r4: 'Perfis · histórico completo · edição inline',
+    pgeo_r5: 'STOMP WebSocket · status ASO em tempo real', pgeo_r6: 'Gestão de usuários · audit trail',
+    pgeo_gallery_label: '// Sistema em Produção', pgeo_screenshots_note: '📸 Screenshots serão adicionados — envie as capturas do sistema',
+    pgeo_infra_label: '// Infraestrutura de Produção', pgeo_infra_online: 'Sistema online',
+    pgeo_infra_deploy: 'Deploy', pgeo_infra_deploy_desc: 'Ambiente completo em containers · multi-serviço',
+    pgeo_infra_ssl: 'Segurança', pgeo_infra_ssl_desc: 'Certificado TLS · proxy reverso · HTTPS forçado',
+    pgeo_infra_db: 'Database', pgeo_infra_db_desc: 'Container dedicado · volumes persistentes · backups',
+    pgeo_infra_update: 'Atualizações', pgeo_infra_update_desc: 'Script de deploy automatizado via webhook do GitHub',
+    // projects
+    proj_label: '// 06 — Projetos', proj_title: 'Outros Projetos',
     status_active: 'Ativo', status_done: 'Concluído', status_wip: 'Em Desenvolvimento',
     proj1_desc: 'Plataforma de gestão operacional aérea com hierarquia de usuários, relatórios completos e controle granular de permissões por função.',
     proj_finance_desc: 'SaaS financeiro multi-tenant com isolamento por empresa (TenantContext), JWT + refresh token, audit log (22 ações), rate limiting (Bucket4j), LGPD, DRE e conciliação bancária. 87 commits, Testcontainers e CI/CD.',
     proj_sesmt_desc: 'Sistema hospitalar de saúde ocupacional: agendamentos, ASO, atestados, WebSocket em tempo real, auditoria completa e controle de acesso ADMIN/OPERADOR. Deploy via Docker + nginx SSL.',
-    proj2_desc: 'Consulta de preços de veículos integrando a API pública FIPE. Busca por marca, modelo e ano com apresentação limpa dos dados.',
-    proj3_desc: 'Sistema de gestão de vagas com papéis distintos para candidatos e recrutadores, fluxo de candidatura e gerenciamento de dados.',
     proj4_desc: 'Plataforma de produtividade com mecânicas de recompensa e progressão. Transforma tarefas diárias em experiência engajante com pontos e metas.',
     proj5_desc: 'Site elegante para uma marca de cerâmicas artesanais. Focado em apresentação visual e interface limpa para destacar os produtos.',
     proj_more: 'Mais projetos no GitHub', proj_view: 'Ver →', proj_github_btn: 'Ver GitHub →',
     // stats
-    stats_label: '// 05 — Números', stats_title: 'Em Números',
+    stats_label: '// 07 — Números', stats_title: 'Em Números',
     stat_repos: 'Repositórios', stat_projects: 'Sistemas em Produção', stat_years: 'Anos Desenvolvendo', stat_commit: 'Endpoints REST',
     // brand
     brand_label: '// 06 — Identidade', brand_title: 'A Marca',
@@ -1375,6 +1826,7 @@ const translations = {
   },
   en: {
     nav_about: 'About', nav_projects: 'Projects', nav_brand: 'Brand', nav_featured: 'Air Ops',
+    nav_finance: 'Finance', nav_sesmt: 'PGEO',
     nav_contact: 'Contact', nav_status: 'Open to work',
     hero_tag: '// Backend Engineer',
     hero_desc1: 'From civil engineering to backend — building systems that work.',
@@ -1408,17 +1860,58 @@ const translations = {
     feat_infra_front: 'Frontend', feat_infra_front_desc: 'Next.js · Edge Network · Automatic CI/CD',
     feat_infra_db: 'Database', feat_infra_db_desc: 'Managed PostgreSQL · Connection pooling',
     feat_infra_ping: 'Keep-alive', feat_infra_ping_title: 'UptimeRobot · /actuator/health', feat_infra_ping_desc: 'UptimeRobot pings periodically to prevent DB idle and cold start on Render',
-    proj_label: '// 04 — Projects', proj_title: 'Other Projects',
+    // finance api
+    fin_title: 'Finance API', fin_badge: 'SaaS · Multi-Tenant · In Production',
+    fin_name: 'Finance API — Financial SaaS', fin_sub: 'Multi-Tenant · JWT + Refresh Token · Audit Log · Bucket4j · LGPD · Income Statement · Testcontainers',
+    fin_btn_back: 'Backend →', fin_btn_front: 'Frontend →',
+    fin_desc: 'Production-grade multi-tenant financial SaaS with complete per-company data isolation via thread-local TenantContext, JWT + refresh token auth, audit log across 22 distinct actions, Redis-free rate limiting (Bucket4j), LGPD compliance (DELETE /me), income statement, bank reconciliation and CSV/XLSX import. 87 commits, integration tests with Testcontainers and CI/CD via GitHub Actions.',
+    fin_arch_label: '// Architecture', fin_arch_front: 'Frontend',
+    fin_h1_label: 'Multi-Tenancy', fin_h1: 'Thread-local TenantContext · full per-company isolation · JWT filter populates the tenant on every request',
+    fin_h2_label: 'Authentication', fin_h2: 'JWT + refresh token · Spring Security · <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">@PreAuthorize</code> by role',
+    fin_h3_label: 'Audit Log', fin_h4_label: 'Rate Limiting', fin_h4: 'Bucket4j without Redis · per IP · protects login and critical endpoints with no external dependencies',
+    fin_h5_label: 'LGPD / Privacy', fin_h5: '<code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">DELETE /me</code> · full account deletion · CNPJ/CPF validation',
+    fin_h6_label: 'Reporting',
+    fin_roles_label: '// Roles / Permissions', fin_endpoints_label: '// Main Endpoints',
+    fin_ep1: 'JWT + refresh token', fin_ep2: 'Registration with validated CNPJ/CPF', fin_ep3: 'Income statement by period',
+    fin_ep4: 'Bank reconciliation', fin_ep5: 'Financial metrics and summary', fin_ep6: 'LGPD · full account deletion', fin_ep7: 'CSV / XLSX import',
+    fin_gallery_label: '// System in Production', fin_screenshots_note: '📸 Screenshots will be added — send your system captures',
+    fin_infra_label: '// Production Infrastructure', fin_infra_online: 'All systems online',
+    fin_infra_back: 'Backend', fin_infra_back_desc: 'Spring Boot · Free tier · Auto-deploy via GitHub',
+    fin_infra_front: 'Frontend', fin_infra_front_desc: 'Next.js · Edge Network · Automatic CI/CD',
+    fin_infra_db: 'Database', fin_infra_db_desc: 'Managed PostgreSQL 16 · Connection pooling',
+    fin_infra_ci: 'CI/CD', fin_infra_ci_desc: 'Testcontainers · Integration tests · Automatic deploy',
+    fin_infra_ping: 'Keep-alive', fin_infra_ping_desc: 'Periodic ping prevents DB idle and cold start on Render',
+    // pgeo sesmt
+    pgeo_title: 'PGEO — SESMT', pgeo_badge: 'Real System in Production', pgeo_context: 'Hospital · 1,000+ employees',
+    pgeo_name: 'PGEO — Occupational Health Management', pgeo_sub: 'Hospital SESMT · Spring MVC · Thymeleaf · WebSocket STOMP · Docker · nginx SSL',
+    pgeo_btn_github: 'GitHub →',
+    pgeo_desc: 'Complete web system for managing the SESMT of a hospital with over 1,000 employees. Handles occupational exam scheduling and ASO with real-time WebSocket STOMP updates, medical certificates with absenteeism control (automatic INSS alert), visual weekly calendar, PDF and Excel document generation, and a full audit trail of every action.',
+    pgeo_arch_label: '// Architecture', pgeo_arch_browser: 'Browser',
+    pgeo_h1_label: 'Scheduling', pgeo_h1: 'Dashboard with filters by month, employee and establishment · visual weekly calendar · PDF guides',
+    pgeo_h2_label: 'Real-Time ASO', pgeo_h2: 'ASO status updated via <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">WebSocket STOMP</code> — no page reload needed',
+    pgeo_h3_label: 'Certificates', pgeo_h4_label: 'Employees', pgeo_h4: 'Full history with job changes, appointments and certificates · inline editing · change audit',
+    pgeo_h5_label: 'Security', pgeo_h5: 'ADMIN / OPERATOR roles · session expires in 4h · full audit trail · nginx with TLS certificate',
+    pgeo_h6_label: 'Documents',
+    pgeo_roles_label: '// Roles / Permissions', pgeo_routes_label: '// Main Modules',
+    pgeo_r1: 'General dashboard with filters and statistics', pgeo_r2: 'Weekly calendar · filters · PDF',
+    pgeo_r3: 'Certificates · absenteeism · INSS alert', pgeo_r4: 'Profiles · full history · inline editing',
+    pgeo_r5: 'STOMP WebSocket · real-time ASO status', pgeo_r6: 'User management · audit trail',
+    pgeo_gallery_label: '// System in Production', pgeo_screenshots_note: '📸 Screenshots will be added — send your system captures',
+    pgeo_infra_label: '// Production Infrastructure', pgeo_infra_online: 'System online',
+    pgeo_infra_deploy: 'Deploy', pgeo_infra_deploy_desc: 'Full environment in containers · multi-service',
+    pgeo_infra_ssl: 'Security', pgeo_infra_ssl_desc: 'TLS certificate · reverse proxy · forced HTTPS',
+    pgeo_infra_db: 'Database', pgeo_infra_db_desc: 'Dedicated container · persistent volumes · backups',
+    pgeo_infra_update: 'Updates', pgeo_infra_update_desc: 'Automated deploy script via GitHub webhook',
+    // projects
+    proj_label: '// 06 — Projects', proj_title: 'Other Projects',
     status_active: 'Active', status_done: 'Complete', status_wip: 'In Progress',
     proj1_desc: 'Operational air management platform with user hierarchy, comprehensive reporting and granular permission control across organizational roles.',
     proj_finance_desc: 'Multi-tenant financial SaaS with per-company isolation (TenantContext), JWT + refresh token, audit log (22 actions), rate limiting (Bucket4j), LGPD compliance, income statement and bank reconciliation. 87 commits, Testcontainers and CI/CD.',
     proj_sesmt_desc: 'Hospital occupational health management system: scheduling, medical certificates, real-time WebSocket updates, full audit trail and ADMIN/OPERATOR access control. Deployed via Docker + nginx SSL.',
-    proj2_desc: "Vehicle price consultation tool integrating with Brazil's official FIPE public API. Search by brand, model and year with clean data presentation.",
-    proj3_desc: 'Job vacancy management system with distinct candidate and recruiter roles, application workflow and structured data management.',
     proj4_desc: 'Productivity platform with reward mechanics and progression systems. Turns daily tasks into an engaging experience with points and milestones.',
     proj5_desc: 'Elegant showcase website for a handcrafted ceramics brand. Focused on visual presentation and clean UI to highlight artisan products.',
     proj_more: 'More projects on GitHub', proj_view: 'View →', proj_github_btn: 'View GitHub →',
-    stats_label: '// 05 — Numbers', stats_title: 'By the Numbers',
+    stats_label: '// 07 — Numbers', stats_title: 'By the Numbers',
     stat_repos: 'Repositories', stat_projects: 'Systems in Production', stat_years: 'Years Building', stat_commit: 'REST Endpoints',
     brand_label: '// 06 — Identity', brand_title: 'The Brand',
     brand_desc: 'The <strong style="color:var(--text)">PHM</strong> brand represents a professional identity built on three pillars — <strong style="color:var(--text)">Precision</strong>, <strong style="color:var(--text)">Honesty</strong> and <strong style="color:var(--text)">Mastery</strong> — values that guide every line of code.',
