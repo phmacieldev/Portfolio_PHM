@@ -716,7 +716,7 @@
 
         <!-- description -->
         <p style="font-size:0.85rem;color:var(--muted);line-height:1.85;max-width:780px;margin-bottom:2rem;" data-i18n="feat_desc">
-          Sistema operacional completo para gestão interna de uma divisão aérea, com hierarquia de 7 ranks, autenticação JWT stateless, controle de acesso granular por função (RBAC), sistema de score automático para progressão de pilotos, logs de voo, relatórios de desempenho e integração com Discord via webhooks.
+          Sistema operacional completo para gestão interna de uma divisão aérea, com hierarquia de 8 ranks, autenticação JWT stateless, controle de acesso granular por função (RBAC), sistema de score automático para progressão de pilotos, logs de voo, relatórios de desempenho e integração com Discord via webhooks.
         </p>
 
         <!-- architecture diagram -->
@@ -776,7 +776,7 @@
         </div>
         <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
           <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h2_label">Hierarquia</div>
-          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="feat_h2">7 ranks · TRAINEE → LEAD · imunidade a rebaixamento automático</div>
+          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="feat_h2">8 ranks · TRAINEE → LEAD · ADM · imunidade a rebaixamento automático</div>
         </div>
         <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
           <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h3_label">Score Engine</div>
@@ -979,8 +979,8 @@
             <span style="font-size:1rem;">🔁</span>
             <div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="feat_infra_ping">Keep-alive</div>
           </div>
-          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;" data-i18n="feat_infra_ping_title">Ping · /actuator/health</div>
-          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="feat_infra_ping_desc">Scheduler periódico evita idle do banco e cold start no Render</div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;" data-i18n="feat_infra_ping_title">UptimeRobot · /actuator/health</div>
+          <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="feat_infra_ping_desc">UptimeRobot faz ping periódico evitando idle do banco e cold start no Render</div>
         </div>
 
       </div>
@@ -993,8 +993,52 @@
   <h2 class="section-title reveal" data-i18n="proj_title">Outros Projetos</h2>
   <div class="projects-grid">
 
-    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
+    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)" style="border-color:rgba(79,142,247,0.35);">
       <div class="project-num">01 /</div>
+      <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+        <div class="project-status status-active" style="margin-bottom:0;">● <span data-i18n="status_active">Ativo</span></div>
+        <span style="font-size:0.58rem;letter-spacing:0.15em;color:var(--accent);border:1px solid rgba(79,142,247,0.3);padding:0.15rem 0.5rem;border-radius:2px;text-transform:uppercase;">SaaS</span>
+        <span style="font-size:0.58rem;letter-spacing:0.12em;color:var(--muted);border:1px solid var(--border);padding:0.15rem 0.5rem;border-radius:2px;text-transform:uppercase;">Multi-Tenant</span>
+      </div>
+      <div class="project-title">💰 Finance API</div>
+      <p class="project-desc"><span data-i18n="proj_finance_desc">SaaS financeiro multi-tenant com isolamento por empresa (TenantContext), JWT + refresh token, audit log (22 ações), rate limiting (Bucket4j), LGPD, DRE e conciliação bancária. 87 commits, Testcontainers e CI/CD.</span></p>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="stack-badge">Java 21</span>
+          <span class="stack-badge">Spring Boot 4</span>
+          <span class="stack-badge">PostgreSQL</span>
+          <span class="stack-badge">Docker</span>
+          <span class="stack-badge">CI/CD</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.7rem;">
+          <a href="https://finance-api-sandy-pi.vercel.app" target="_blank" style="font-size:0.65rem;color:var(--green);text-decoration:none;letter-spacing:0.05em;white-space:nowrap;">↗ Live</a>
+          <a href="https://github.com/phmacieldev/finance-api" target="_blank" class="project-link"><span data-i18n="proj_view">Ver →</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
+      <div class="project-num">02 /</div>
+      <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+        <div class="project-status status-active" style="margin-bottom:0;">● <span data-i18n="status_active">Ativo</span></div>
+        <span style="font-size:0.58rem;letter-spacing:0.12em;color:var(--muted);border:1px solid var(--border);padding:0.15rem 0.5rem;border-radius:2px;text-transform:uppercase;">Hospital</span>
+      </div>
+      <div class="project-title">🏥 PGEO — SESMT</div>
+      <p class="project-desc"><span data-i18n="proj_sesmt_desc">Sistema hospitalar de saúde ocupacional: agendamentos, ASO, atestados, WebSocket em tempo real, auditoria completa e controle de acesso ADMIN/OPERADOR. Deploy via Docker + nginx SSL.</span></p>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="stack-badge">Java</span>
+          <span class="stack-badge">Spring Boot</span>
+          <span class="stack-badge">PostgreSQL</span>
+          <span class="stack-badge">WebSocket</span>
+          <span class="stack-badge">Docker</span>
+        </div>
+        <a href="https://github.com/phmacieldev/sistema-sesmt" target="_blank" class="project-link"><span data-i18n="proj_view">Ver →</span></a>
+      </div>
+    </div>
+
+    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
+      <div class="project-num">03 /</div>
       <div class="project-status status-done">✓ <span data-i18n="status_done">Concluído</span></div>
       <div class="project-title">🔍 FIPE Table Search</div>
       <p class="project-desc"><span data-i18n="proj2_desc">Consulta de preços de veículos integrando a API pública FIPE. Busca por marca, modelo e ano com apresentação limpa dos dados.</span></p>
@@ -1009,7 +1053,7 @@
     </div>
 
     <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
-      <div class="project-num">02 /</div>
+      <div class="project-num">04 /</div>
       <div class="project-status status-done">✓ <span data-i18n="status_done">Concluído</span></div>
       <div class="project-title">👥 Gestão de Vagas</div>
       <p class="project-desc"><span data-i18n="proj3_desc">Sistema de gestão de vagas com papéis distintos para candidatos e recrutadores, fluxo de candidatura e gerenciamento de dados.</span></p>
@@ -1024,7 +1068,7 @@
     </div>
 
     <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
-      <div class="project-num">03 /</div>
+      <div class="project-num">05 /</div>
       <div class="project-status status-active">● <span data-i18n="status_wip">Em Desenvolvimento</span></div>
       <div class="project-title">✅ Gamified TodoList</div>
       <p class="project-desc"><span data-i18n="proj4_desc">Plataforma de produtividade com mecânicas de recompensa e progressão. Transforma tarefas diárias em experiência engajante com pontos e metas.</span></p>
@@ -1038,7 +1082,7 @@
     </div>
 
     <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
-      <div class="project-num">04 /</div>
+      <div class="project-num">06 /</div>
       <div class="project-status status-done">✓ <span data-i18n="status_done">Concluído</span></div>
       <div class="project-title">🏺 Beca Ateliê</div>
       <p class="project-desc"><span data-i18n="proj5_desc">Site elegante para uma marca de cerâmicas artesanais. Focado em apresentação visual e interface limpa para destacar os produtos.</span></p>
@@ -1076,16 +1120,16 @@
         <div class="stat-label" data-i18n="stat_repos">Repositórios</div>
       </div>
       <div class="stat-item reveal-scale">
-        <div class="stat-num" data-target="5">0</div>
-        <div class="stat-label" data-i18n="stat_projects">Projetos</div>
+        <div class="stat-num" data-target="3">0</div>
+        <div class="stat-label" data-i18n="stat_projects">Sistemas em Produção</div>
       </div>
       <div class="stat-item reveal-scale">
         <div class="stat-num" data-target="2">0</div>
         <div class="stat-label" data-i18n="stat_years">Anos Desenvolvendo</div>
       </div>
       <div class="stat-item reveal-scale">
-        <div class="stat-num" data-target="100" data-suffix="%">0</div>
-        <div class="stat-label" data-i18n="stat_commit">Comprometimento</div>
+        <div class="stat-num" data-target="20" data-suffix="+">0</div>
+        <div class="stat-label" data-i18n="stat_commit">Endpoints REST</div>
       </div>
     </div>
   </div>
@@ -1287,10 +1331,10 @@ const translations = {
     feat_badge: 'Sistema Real em Produção', feat_name: 'Air Support Division — Backend System',
     feat_sub: 'API REST · JWT Stateless · RBAC · Score Engine · Página Pública · Docker · PostgreSQL · Swagger',
     feat_btn_back: 'Backend →', feat_btn_front: 'Frontend →',
-    feat_desc: 'Sistema operacional completo para gestão interna de uma divisão aérea, com hierarquia de 7 ranks, autenticação JWT stateless, controle de acesso granular por função (RBAC), sistema de score automático para progressão de pilotos, logs de voo, relatórios de desempenho e integração com Discord via webhooks.',
+    feat_desc: 'Sistema operacional completo para gestão interna de uma divisão aérea, com hierarquia de 8 ranks, autenticação JWT stateless, controle de acesso granular por função (RBAC), sistema de score automático para progressão de pilotos, logs de voo, relatórios de desempenho e integração com Discord via webhooks.',
     feat_arch_label: '// Arquitetura', arch_client: 'Frontend',
     feat_h1_label: 'Autenticação', feat_h1: 'JWT stateless · Spring Security 7 · <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">@PreAuthorize</code> por role',
-    feat_h2_label: 'Hierarquia', feat_h2: '7 ranks · TRAINEE → LEAD · imunidade a promoção e rebaixamento automático para ranks ≥ 5',
+    feat_h2_label: 'Hierarquia', feat_h2: '8 ranks · TRAINEE → LEAD · ADM · imunidade a promoção e rebaixamento automático para ranks ≥ 5',
     feat_h3_label: 'Score Engine',
     feat_h4: 'Documentação completa · JWT integrado · Docs via Google Docs · duração de voo calculada automaticamente',
     feat_endpoints_label: '// Endpoints principais', feat_ranks_label: '// Hierarquia de Ranks', feat_ranks_note: '· imune = sem promoção/rebaixamento automático por score', feat_gallery_label: '// Sistema em Produção',
@@ -1298,11 +1342,13 @@ const translations = {
     feat_infra_back: 'Backend', feat_infra_back_desc: 'Spring Boot · Free tier · Deploy automático via GitHub',
     feat_infra_front: 'Frontend', feat_infra_front_desc: 'Next.js · Edge Network · CI/CD automático',
     feat_infra_db: 'Database', feat_infra_db_desc: 'PostgreSQL gerenciado · Connection pooling',
-    feat_infra_ping: 'Keep-alive', feat_infra_ping_title: 'Ping · /actuator/health', feat_infra_ping_desc: 'Scheduler periódico evita idle do banco e cold start no Render',
+    feat_infra_ping: 'Keep-alive', feat_infra_ping_title: 'UptimeRobot · /actuator/health', feat_infra_ping_desc: 'UptimeRobot faz ping periódico evitando idle do banco e cold start no Render',
     // projects
     proj_label: '// 04 — Projetos', proj_title: 'Outros Projetos',
     status_active: 'Ativo', status_done: 'Concluído', status_wip: 'Em Desenvolvimento',
     proj1_desc: 'Plataforma de gestão operacional aérea com hierarquia de usuários, relatórios completos e controle granular de permissões por função.',
+    proj_finance_desc: 'SaaS financeiro multi-tenant com isolamento por empresa (TenantContext), JWT + refresh token, audit log (22 ações), rate limiting (Bucket4j), LGPD, DRE e conciliação bancária. 87 commits, Testcontainers e CI/CD.',
+    proj_sesmt_desc: 'Sistema hospitalar de saúde ocupacional: agendamentos, ASO, atestados, WebSocket em tempo real, auditoria completa e controle de acesso ADMIN/OPERADOR. Deploy via Docker + nginx SSL.',
     proj2_desc: 'Consulta de preços de veículos integrando a API pública FIPE. Busca por marca, modelo e ano com apresentação limpa dos dados.',
     proj3_desc: 'Sistema de gestão de vagas com papéis distintos para candidatos e recrutadores, fluxo de candidatura e gerenciamento de dados.',
     proj4_desc: 'Plataforma de produtividade com mecânicas de recompensa e progressão. Transforma tarefas diárias em experiência engajante com pontos e metas.',
@@ -1310,7 +1356,7 @@ const translations = {
     proj_more: 'Mais projetos no GitHub', proj_view: 'Ver →', proj_github_btn: 'Ver GitHub →',
     // stats
     stats_label: '// 05 — Números', stats_title: 'Em Números',
-    stat_repos: 'Repositórios', stat_projects: 'Projetos', stat_years: 'Anos Desenvolvendo', stat_commit: 'Comprometimento',
+    stat_repos: 'Repositórios', stat_projects: 'Sistemas em Produção', stat_years: 'Anos Desenvolvendo', stat_commit: 'Endpoints REST',
     // brand
     brand_label: '// 06 — Identidade', brand_title: 'A Marca',
     brand_desc: 'A marca <strong style="color:var(--text)">PHM</strong> representa a identidade profissional construída sobre três pilares — <strong style="color:var(--text)">Precisão</strong>, <strong style="color:var(--text)">Honestidade</strong> e <strong style="color:var(--text)">Maestria</strong> — valores que guiam cada linha de código.',
@@ -1349,10 +1395,10 @@ const translations = {
     feat_badge: 'Real System in Production', feat_name: 'Air Support Division — Backend System',
     feat_sub: 'REST API · Stateless JWT · RBAC · Score Engine · Public Status · Docker · PostgreSQL · Swagger',
     feat_btn_back: 'Backend →', feat_btn_front: 'Frontend →',
-    feat_desc: 'Full operational system for internal management of an air division, with 7-rank hierarchy, stateless JWT authentication, granular role-based access control (RBAC), automatic score engine for pilot progression, flight logs, performance reports and Discord webhook integration.',
+    feat_desc: 'Full operational system for internal management of an air division, with 8-rank hierarchy, stateless JWT authentication, granular role-based access control (RBAC), automatic score engine for pilot progression, flight logs, performance reports and Discord webhook integration.',
     feat_arch_label: '// Architecture', arch_client: 'Frontend',
     feat_h1_label: 'Authentication', feat_h1: 'Stateless JWT · Spring Security 7 · <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">@PreAuthorize</code> by role',
-    feat_h2_label: 'Hierarchy', feat_h2: '7 ranks · TRAINEE → LEAD · immunity to automatic promotion and demotion for ranks ≥ 5',
+    feat_h2_label: 'Hierarchy', feat_h2: '8 ranks · TRAINEE → LEAD · ADM · immunity to automatic promotion and demotion for ranks ≥ 5',
     feat_h3_label: 'Score Engine',
     feat_h4: 'Full docs · integrated JWT · Google Docs links · auto flight duration · Discord webhook on report review',
     feat_h6_label: 'Packages', feat_h5_label: 'Public Page', feat_h5: '<a href="https://air-ops-system-web.vercel.app/status" target="_blank" style="color:var(--accent);text-decoration:none;">/status</a> — roster, metrics and unit activity without authentication',
@@ -1361,17 +1407,19 @@ const translations = {
     feat_infra_back: 'Backend', feat_infra_back_desc: 'Spring Boot · Free tier · Auto-deploy via GitHub',
     feat_infra_front: 'Frontend', feat_infra_front_desc: 'Next.js · Edge Network · Automatic CI/CD',
     feat_infra_db: 'Database', feat_infra_db_desc: 'Managed PostgreSQL · Connection pooling',
-    feat_infra_ping: 'Keep-alive', feat_infra_ping_title: 'Ping · /actuator/health', feat_infra_ping_desc: 'Periodic scheduler prevents DB idle and cold start on Render',
+    feat_infra_ping: 'Keep-alive', feat_infra_ping_title: 'UptimeRobot · /actuator/health', feat_infra_ping_desc: 'UptimeRobot pings periodically to prevent DB idle and cold start on Render',
     proj_label: '// 04 — Projects', proj_title: 'Other Projects',
     status_active: 'Active', status_done: 'Complete', status_wip: 'In Progress',
     proj1_desc: 'Operational air management platform with user hierarchy, comprehensive reporting and granular permission control across organizational roles.',
+    proj_finance_desc: 'Multi-tenant financial SaaS with per-company isolation (TenantContext), JWT + refresh token, audit log (22 actions), rate limiting (Bucket4j), LGPD compliance, income statement and bank reconciliation. 87 commits, Testcontainers and CI/CD.',
+    proj_sesmt_desc: 'Hospital occupational health management system: scheduling, medical certificates, real-time WebSocket updates, full audit trail and ADMIN/OPERATOR access control. Deployed via Docker + nginx SSL.',
     proj2_desc: "Vehicle price consultation tool integrating with Brazil's official FIPE public API. Search by brand, model and year with clean data presentation.",
     proj3_desc: 'Job vacancy management system with distinct candidate and recruiter roles, application workflow and structured data management.',
     proj4_desc: 'Productivity platform with reward mechanics and progression systems. Turns daily tasks into an engaging experience with points and milestones.',
     proj5_desc: 'Elegant showcase website for a handcrafted ceramics brand. Focused on visual presentation and clean UI to highlight artisan products.',
     proj_more: 'More projects on GitHub', proj_view: 'View →', proj_github_btn: 'View GitHub →',
     stats_label: '// 05 — Numbers', stats_title: 'By the Numbers',
-    stat_repos: 'Repositories', stat_projects: 'Projects', stat_years: 'Years Building', stat_commit: 'Commitment',
+    stat_repos: 'Repositories', stat_projects: 'Systems in Production', stat_years: 'Years Building', stat_commit: 'REST Endpoints',
     brand_label: '// 06 — Identity', brand_title: 'The Brand',
     brand_desc: 'The <strong style="color:var(--text)">PHM</strong> brand represents a professional identity built on three pillars — <strong style="color:var(--text)">Precision</strong>, <strong style="color:var(--text)">Honesty</strong> and <strong style="color:var(--text)">Mastery</strong> — values that guide every line of code.',
     brand_primary: 'Primary Mark', brand_dark: 'Dark Variant',
