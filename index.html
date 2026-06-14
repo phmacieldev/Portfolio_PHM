@@ -1494,97 +1494,25 @@
 
 
 <!-- PROJECTS -->
-<section id="projects">
-  <p class="section-label reveal-left" data-i18n="proj_label">// 06 — Projetos</p>
-  <h2 class="section-title reveal" data-i18n="proj_title">Outros Projetos</h2>
-  <div class="projects-grid">
+<section id="projects" style="padding:6rem 3rem;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label reveal-left" data-i18n="proj_label">// 06 — Projetos</p>
+    <h2 class="section-title reveal" data-i18n="proj_title">Outros Projetos</h2>
 
-    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)" style="border-color:rgba(79,142,247,0.35);">
-      <div class="project-num">01 /</div>
-      <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;">
-        <div class="project-status status-active" style="margin-bottom:0;">● <span data-i18n="status_active">Ativo</span></div>
-        <span style="font-size:0.58rem;letter-spacing:0.15em;color:var(--accent);border:1px solid rgba(79,142,247,0.3);padding:0.15rem 0.5rem;border-radius:2px;text-transform:uppercase;">SaaS</span>
-        <span style="font-size:0.58rem;letter-spacing:0.12em;color:var(--muted);border:1px solid var(--border);padding:0.15rem 0.5rem;border-radius:2px;text-transform:uppercase;">Multi-Tenant</span>
+    <div class="reveal" style="margin-top:3rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:3rem 2.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.8rem;">
+      <p style="font-size:0.9rem;color:var(--muted);line-height:1.85;max-width:560px;" data-i18n="proj_github_desc">Os três principais projetos estão detalhados acima — Air Ops System, Finance API e PGEO/SESMT. O restante do portfólio de repositórios públicos está disponível no GitHub.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+        <a href="https://github.com/phmacieldev" target="_blank" class="btn" style="font-size:0.78rem;padding:0.8rem 2rem;display:flex;align-items:center;gap:0.6rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span data-i18n="proj_github_btn">Ver GitHub →</span>
+        </a>
       </div>
-      <div class="project-title">💰 Finance API</div>
-      <p class="project-desc"><span data-i18n="proj_finance_desc">SaaS financeiro multi-tenant com isolamento por empresa (TenantContext), JWT + refresh token, audit log (22 ações), rate limiting (Bucket4j), LGPD, DRE e conciliação bancária. 87 commits, Testcontainers e CI/CD.</span></p>
-      <div class="project-footer">
-        <div class="project-stack">
-          <span class="stack-badge">Java 21</span>
-          <span class="stack-badge">Spring Boot 4</span>
-          <span class="stack-badge">PostgreSQL</span>
-          <span class="stack-badge">Docker</span>
-          <span class="stack-badge">CI/CD</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.7rem;">
-          <a href="https://finance-api-sandy-pi.vercel.app" target="_blank" style="font-size:0.65rem;color:var(--green);text-decoration:none;letter-spacing:0.05em;white-space:nowrap;">↗ Live</a>
-          <a href="https://github.com/phmacieldev/finance-api" target="_blank" class="project-link"><span data-i18n="proj_view">Ver →</span></a>
-        </div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+        <span style="font-size:0.62rem;color:var(--muted2);letter-spacing:0.08em;" data-i18n="proj_repos_note">33 repositórios públicos · Java · TypeScript · Node.js · React</span>
       </div>
     </div>
-
-    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
-      <div class="project-num">02 /</div>
-      <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;">
-        <div class="project-status status-active" style="margin-bottom:0;">● <span data-i18n="status_active">Ativo</span></div>
-        <span style="font-size:0.58rem;letter-spacing:0.12em;color:var(--muted);border:1px solid var(--border);padding:0.15rem 0.5rem;border-radius:2px;text-transform:uppercase;">Hospital</span>
-      </div>
-      <div class="project-title">🏥 PGEO — SESMT</div>
-      <p class="project-desc"><span data-i18n="proj_sesmt_desc">Sistema hospitalar de saúde ocupacional: agendamentos, ASO, atestados, WebSocket em tempo real, auditoria completa e controle de acesso ADMIN/OPERADOR. Deploy via Docker + nginx SSL.</span></p>
-      <div class="project-footer">
-        <div class="project-stack">
-          <span class="stack-badge">Java</span>
-          <span class="stack-badge">Spring Boot</span>
-          <span class="stack-badge">PostgreSQL</span>
-          <span class="stack-badge">WebSocket</span>
-          <span class="stack-badge">Docker</span>
-        </div>
-        <a href="https://github.com/phmacieldev/sistema-sesmt" target="_blank" class="project-link"><span data-i18n="proj_view">Ver →</span></a>
-      </div>
-    </div>
-
-    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
-      <div class="project-num">03 /</div>
-      <div class="project-status status-active">● <span data-i18n="status_wip">Em Desenvolvimento</span></div>
-      <div class="project-title">✅ Gamified TodoList</div>
-      <p class="project-desc"><span data-i18n="proj4_desc">Plataforma de produtividade com mecânicas de recompensa e progressão. Transforma tarefas diárias em experiência engajante com pontos e metas.</span></p>
-      <div class="project-footer">
-        <div class="project-stack">
-          <span class="stack-badge">Node.js</span>
-          <span class="stack-badge">TypeScript</span>
-        </div>
-        <a href="https://github.com/phmacieldev/TodoList" target="_blank" class="project-link"><span data-i18n="proj_view">Ver →</span></a>
-      </div>
-    </div>
-
-    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)">
-      <div class="project-num">04 /</div>
-      <div class="project-status status-done">✓ <span data-i18n="status_done">Concluído</span></div>
-      <div class="project-title">🏺 Beca Ateliê</div>
-      <p class="project-desc"><span data-i18n="proj5_desc">Site elegante para uma marca de cerâmicas artesanais. Focado em apresentação visual e interface limpa para destacar os produtos.</span></p>
-      <div class="project-footer">
-        <div class="project-stack">
-          <span class="stack-badge">TypeScript</span>
-          <span class="stack-badge">HTML</span>
-          <span class="stack-badge">CSS</span>
-        </div>
-        <a href="https://github.com/phmacieldev" target="_blank" class="project-link"><span data-i18n="proj_view">Ver →</span></a>
-      </div>
-    </div>
-
-    <div class="project-card reveal" onmousemove="projectGlow(event,this)" onmouseleave="resetGlow(this)" style="border-style:dashed;display:flex;align-items:center;justify-content:center;text-align:center;min-height:220px;">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:1.4rem;">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.25">
-          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.641.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" fill="#e8edf5"/>
-        </svg>
-        <div style="font-size:0.78rem;color:var(--muted2);letter-spacing:0.05em;"><span data-i18n="proj_more">Mais projetos no GitHub</span></div>
-        <a href="https://github.com/phmacieldev" target="_blank" class="btn btn-secondary" style="font-size:0.7rem;padding:0.65rem 1.4rem;" data-i18n="proj_github_btn">Ver GitHub →</a>
-      </div>
-    </div>
-
   </div>
 </section>
-
 <!-- STATS -->
 <section id="stats">
   <div class="stats-inner">
