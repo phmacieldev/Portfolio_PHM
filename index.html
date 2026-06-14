@@ -1399,59 +1399,118 @@
       </div>
     </div>
 
-    <!-- GALLERY placeholder (outside hero card, like ASD) -->
+    <!-- GALLERY -->
     <div style="margin-top:2rem;" class="reveal">
       <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1.2rem;" data-i18n="pgeo_gallery_label">// Sistema em Produção</div>
 
-      <!-- main + side -->
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.8rem;align-items:start;" id="pgeo-gallery-grid">
-        <div style="grid-column:1/3;position:relative;border-radius:8px;overflow:hidden;border:1px dashed var(--border2);background:var(--bg3);" id="pgeo-gallery-main">
-          <div style="aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;">
-            <div style="font-size:2.5rem;opacity:0.15;">📸</div>
-            <div style="font-size:0.62rem;color:var(--muted2);letter-spacing:0.12em;text-transform:uppercase;">Dashboard</div>
+      <!-- Carousel container -->
+      <div id="pgeo-carousel" style="position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--border2);background:var(--bg3);">
+        <!-- Main viewer -->
+        <div style="position:relative;aspect-ratio:16/9;overflow:hidden;cursor:zoom-in;" id="pgeo-main-viewer" onclick="pgeoOpenLightbox(pgeoIdx)">
+          <img id="pgeo-main-img" src="public/images/sesmt/02_home.png" alt="PGEO SESMT" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity 0.25s;" />
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem 1rem;background:linear-gradient(transparent,rgba(8,10,15,0.85));display:flex;align-items:center;justify-content:space-between;">
+            <span id="pgeo-main-label" style="font-size:0.65rem;letter-spacing:0.12em;color:var(--text);text-transform:uppercase;">Dashboard Principal</span>
+            <span style="font-size:0.6rem;color:var(--muted2);">clique para ampliar</span>
           </div>
+          <!-- Prev/Next arrows -->
+          <button onclick="event.stopPropagation();pgeoNav(-1)" style="position:absolute;left:0.8rem;top:50%;transform:translateY(-50%);background:rgba(8,10,15,0.7);border:1px solid var(--border2);color:var(--text);width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(79,142,247,0.3)'" onmouseout="this.style.background='rgba(8,10,15,0.7)'">‹</button>
+          <button onclick="event.stopPropagation();pgeoNav(1)"  style="position:absolute;right:0.8rem;top:50%;transform:translateY(-50%);background:rgba(8,10,15,0.7);border:1px solid var(--border2);color:var(--text);width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(79,142,247,0.3)'" onmouseout="this.style.background='rgba(8,10,15,0.7)'">›</button>
         </div>
-        <div style="display:flex;flex-direction:column;gap:0.8rem;">
-          <div style="border-radius:6px;border:1px dashed var(--border2);background:var(--bg3);">
-            <div style="aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
-              <div style="font-size:1.5rem;opacity:0.15;">📸</div>
-              <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-transform:uppercase;">Calendário</div>
-            </div>
-          </div>
-          <div style="border-radius:6px;border:1px dashed var(--border2);background:var(--bg3);">
-            <div style="aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
-              <div style="font-size:1.5rem;opacity:0.15;">📸</div>
-              <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-transform:uppercase;">ASO</div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- bottom row -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-top:0.8rem;">
-        <div style="border-radius:6px;border:1px dashed var(--border2);background:var(--bg3);">
-          <div style="aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
-            <div style="font-size:1.5rem;opacity:0.15;">📸</div>
-            <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-transform:uppercase;">Atestados</div>
-          </div>
+        <!-- Thumbnail strip -->
+        <div style="display:flex;gap:0.5rem;padding:0.75rem;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--border2) transparent;" id="pgeo-thumbs">
+          <!-- thumbnails injected by script -->
         </div>
-        <div style="border-radius:6px;border:1px dashed var(--border2);background:var(--bg3);">
-          <div style="aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
-            <div style="font-size:1.5rem;opacity:0.15;">📸</div>
-            <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-transform:uppercase;">Funcionários</div>
-          </div>
-        </div>
-        <div style="border-radius:6px;border:1px dashed var(--border2);background:var(--bg3);">
-          <div style="aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
-            <div style="font-size:1.5rem;opacity:0.15;">📸</div>
-            <div style="font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-transform:uppercase;">Relatórios</div>
-          </div>
-        </div>
-      </div>
-      <div style="margin-top:1rem;padding:0.8rem 1rem;background:rgba(79,142,247,0.05);border:1px dashed rgba(79,142,247,0.2);border-radius:4px;text-align:center;">
-        <span style="font-size:0.62rem;color:var(--muted2);letter-spacing:0.08em;" data-i18n="pgeo_screenshots_note">📸 Screenshots em breve — sistema de uso interno hospitalar</span>
       </div>
     </div>
+
+    <!-- Lightbox -->
+    <div id="pgeo-lightbox" onclick="pgeoCloseLightbox()" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;cursor:zoom-out;">
+      <button onclick="event.stopPropagation();pgeoNav(-1)" style="position:fixed;left:1.5rem;top:50%;transform:translateY(-50%);background:rgba(30,37,53,0.9);border:1px solid var(--border2);color:var(--text);width:3rem;height:3rem;border-radius:50%;cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;">‹</button>
+      <img id="pgeo-lb-img" src="" alt="" style="max-width:92vw;max-height:90vh;border-radius:6px;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,0.8);" onclick="event.stopPropagation()" />
+      <button onclick="event.stopPropagation();pgeoNav(1)"  style="position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);background:rgba(30,37,53,0.9);border:1px solid var(--border2);color:var(--text);width:3rem;height:3rem;border-radius:50%;cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;">›</button>
+      <button onclick="pgeoCloseLightbox()" style="position:fixed;top:1rem;right:1rem;background:transparent;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;">✕</button>
+      <div id="pgeo-lb-label" style="position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);font-size:0.7rem;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;"></div>
+    </div>
+
+    <script>
+    (function(){
+      const slides = [
+        { src:'public/images/sesmt/02_home.png',          label:'Dashboard Principal' },
+        { src:'public/images/sesmt/03_dashboard_exames.png', label:'Agendamentos / ASOs' },
+        { src:'public/images/sesmt/04_agendar.png',        label:'Agendar Exame' },
+        { src:'public/images/sesmt/05_agenda.png',         label:'Agenda Visual' },
+        { src:'public/images/sesmt/06_dashboard_sangue.png', label:'Dashboard de Sangue' },
+        { src:'public/images/sesmt/07_relatorio_aso.png',  label:'Relatório ASO' },
+        { src:'public/images/sesmt/08_atestados.png',      label:'Atestados Semanais' },
+        { src:'public/images/sesmt/09_atestados_indicadores.png', label:'Indicadores de Atestados' },
+        { src:'public/images/sesmt/10_funcionarios.png',   label:'Funcionários' },
+        { src:'public/images/sesmt/11_estatisticas.png',   label:'Estatísticas de Exames' },
+        { src:'public/images/sesmt/12_indicadores.png',    label:'Indicadores SESMT' },
+        { src:'public/images/sesmt/13_admin_usuarios.png', label:'Admin — Usuários' },
+        { src:'public/images/sesmt/14_admin_auditoria.png',label:'Admin — Auditoria' },
+        { src:'public/images/sesmt/01_login.png',          label:'Tela de Login' },
+      ];
+
+      window.pgeoIdx = 0;
+      const mainImg   = document.getElementById('pgeo-main-img');
+      const mainLabel = document.getElementById('pgeo-main-label');
+      const lbImg     = document.getElementById('pgeo-lb-img');
+      const lbLabel   = document.getElementById('pgeo-lb-label');
+      const lightbox  = document.getElementById('pgeo-lightbox');
+      const thumbsEl  = document.getElementById('pgeo-thumbs');
+
+      // Build thumbs
+      slides.forEach((s, i) => {
+        const th = document.createElement('img');
+        th.src = s.src;
+        th.alt = s.label;
+        th.title = s.label;
+        th.dataset.i = i;
+        th.style.cssText = 'height:56px;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:4px;cursor:pointer;border:2px solid transparent;flex-shrink:0;transition:border-color 0.2s,opacity 0.2s;opacity:0.55;';
+        th.onclick = () => pgeoSet(i);
+        thumbsEl.appendChild(th);
+      });
+
+      function pgeoSet(i) {
+        window.pgeoIdx = (i + slides.length) % slides.length;
+        const s = slides[window.pgeoIdx];
+        mainImg.style.opacity = '0';
+        setTimeout(() => { mainImg.src = s.src; mainImg.style.opacity = '1'; }, 150);
+        mainLabel.textContent = s.label;
+        if (lightbox.style.display === 'flex') { lbImg.src = s.src; lbLabel.textContent = s.label; }
+        // Update thumbs highlight
+        thumbsEl.querySelectorAll('img').forEach((th, j) => {
+          th.style.borderColor = j === window.pgeoIdx ? 'var(--accent)' : 'transparent';
+          th.style.opacity     = j === window.pgeoIdx ? '1' : '0.55';
+        });
+        // Scroll thumb into view
+        const activeTh = thumbsEl.querySelectorAll('img')[window.pgeoIdx];
+        if (activeTh) activeTh.scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
+      }
+
+      window.pgeoNav = function(dir) { pgeoSet(window.pgeoIdx + dir); };
+      window.pgeoOpenLightbox = function(i) {
+        pgeoSet(i);
+        lbImg.src = slides[window.pgeoIdx].src;
+        lbLabel.textContent = slides[window.pgeoIdx].label;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      };
+      window.pgeoCloseLightbox = function() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', e => {
+        if (lightbox.style.display !== 'flex') return;
+        if (e.key === 'ArrowLeft')  pgeoNav(-1);
+        if (e.key === 'ArrowRight') pgeoNav(1);
+        if (e.key === 'Escape')     pgeoCloseLightbox();
+      });
+
+      pgeoSet(0);
+    })();
+    </script>
 
     <!-- stack pills -->
     <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2rem;" class="reveal">
