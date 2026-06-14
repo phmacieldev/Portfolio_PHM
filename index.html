@@ -707,7 +707,7 @@
               <span style="font-size:0.62rem;letter-spacing:0.1em;color:var(--green);background:var(--green-dim);border:1px solid rgba(34,211,165,0.2);padding:0.2rem 0.6rem;border-radius:2px;">● <span data-i18n="status_active">Ativo</span></span>
             </div>
             <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;color:var(--text);line-height:1.1;" data-i18n="feat_name">Air Support Division — Backend System</h3>
-            <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;letter-spacing:0.04em;" data-i18n="feat_sub">API REST · JWT Auth · RBAC · Docker · PostgreSQL · Swagger</p>
+            <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;letter-spacing:0.04em;" data-i18n="feat_sub">API REST · JWT Auth · RBAC · Rate Limiting · Certifications · Discord Webhook</p>
           </div>
           <div style="display:flex;gap:0.8rem;flex-shrink:0;">
             <a href="https://github.com/phmacieldev/air-ops-system" target="_blank" class="btn btn-secondary" style="font-size:0.7rem;padding:0.6rem 1.1rem;" data-i18n="feat_btn_back">Backend →</a>
@@ -717,7 +717,7 @@
 
         <!-- description -->
         <p style="font-size:0.85rem;color:var(--muted);line-height:1.85;max-width:780px;margin-bottom:2rem;" data-i18n="feat_desc">
-          Sistema operacional completo para gestão interna de uma divisão aérea, com hierarquia de 8 ranks, autenticação JWT stateless, controle de acesso granular por função (RBAC), sistema de score automático para progressão de pilotos, logs de voo, relatórios de desempenho e integração com Discord via webhooks.
+          Sistema operacional completo para gestão interna da Air Support Division (LSPD), com hierarquia de 8 ranks, JWT stateless, RBAC granular, score engine automático para progressão de pilotos, rate limiting por IP (Bucket4j), sistema de certificações, paginação em voos/relatórios, health checks com status do DB e integração com Discord via webhooks.
         </p>
 
         <!-- architecture diagram -->
@@ -751,8 +751,8 @@
             <!-- db -->
             <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
               <div style="font-size:1.4rem;margin-bottom:0.4rem;">🗄️</div>
-              <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">PostgreSQL</div>
-              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Docker Compose</div>
+              <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">PostgreSQL 18</div>
+              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Supabase · ACID</div>
             </div>
             <!-- arrow -->
             <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
@@ -792,10 +792,11 @@
           </div>
         </div>
         <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
-          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h6_label">Pacotes</div>
-          <div style="font-size:0.72rem;color:var(--muted);line-height:1.7;font-family:'JetBrains Mono',monospace;">
-            <span style="color:var(--accent)">auth</span> · <span style="color:var(--accent)">pilots</span> · <span style="color:var(--accent)">flights</span> · <span style="color:var(--accent)">reports</span><br/>
-            <span style="color:var(--muted2)">documents</span> · <span style="color:var(--muted2)">discord</span> · <span style="color:var(--muted2)">config</span> · <span style="color:var(--muted2)">common</span>
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h6_label">Certificações</div>
+          <div style="font-size:0.72rem;color:var(--text);line-height:1.7;font-family:'JetBrains Mono',monospace;">
+            <span style="color:var(--accent)">PURSUIT</span> · <span style="color:var(--accent)">OPERATIONAL</span> · <span style="color:var(--accent)">SCENE_CONTROL</span><br/>
+            <span style="color:var(--muted)">COPILOT</span> · <span style="color:var(--muted)">TRANSPORT</span><br/>
+            <span style="color:var(--muted2);font-size:0.62rem;">membros internos · externos</span>
           </div>
         </div>
         <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
@@ -803,16 +804,19 @@
           <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="feat_h5"><a href="https://air-ops-system-web.vercel.app/status" target="_blank" style="color:var(--accent);text-decoration:none;">/status</a> — roster, métricas e atividade da unidade sem autenticação</div>
         </div>
         <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
-          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h6_label">Estrutura</div>
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h6_label">Certificações</div>
           <div style="font-size:0.72rem;color:var(--text);line-height:1.7;font-family:'JetBrains Mono',monospace;">
-            <span style="color:var(--accent)">auth/</span> · <span style="color:var(--accent)">pilots/</span> · <span style="color:var(--accent)">flights/</span><br/>
-            <span style="color:var(--muted)">reports/</span> · <span style="color:var(--muted)">documents/</span> · <span style="color:var(--muted)">discord/</span><br/>
-            <span style="color:var(--muted2)">config/</span> · <span style="color:var(--muted2)">common/</span>
+            <span style="color:var(--accent)">PURSUIT</span> · <span style="color:var(--accent)">OPERATIONAL</span> · <span style="color:var(--accent)">SCENE_CONTROL</span><br/>
+            <span style="color:var(--muted)">COPILOT</span> · <span style="color:var(--muted)">TRANSPORT</span><br/>
+            <span style="color:var(--muted2);font-size:0.62rem;">membros internos · externos</span>
           </div>
         </div>
         <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
-          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;">Swagger</div>
-          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="feat_h4">Documentação completa · fluxo de autorização JWT integrado</div>
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="feat_h4_label">Rate Limiting</div>
+          <div style="font-size:0.78rem;color:var(--text);line-height:1.7;">
+            <code style="font-size:0.68rem;color:var(--green);background:rgba(34,211,165,0.08);padding:0.1rem 0.3rem;border-radius:2px;display:block;margin-bottom:0.6rem;">10 req/min login · 100 req/min geral</code>
+            <div style="font-size:0.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">por IP · sem Redis · HikariCP pool tuning</div>
+          </div>
         </div>
       </div>
 
@@ -846,6 +850,12 @@
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">GET /reports/pilot/{id}</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(250,180,50,0.08);border:1px solid rgba(250,180,50,0.2);border-radius:3px;color:#fbbf24;">PUT /documents/{id}</span>
           <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(34,211,165,0.08);border:1px solid rgba(34,211,165,0.25);border-radius:3px;color:var(--green);">GET /status <span style="opacity:0.6;font-size:0.58rem;">público</span></span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(34,211,165,0.08);border:1px solid rgba(34,211,165,0.2);border-radius:3px;color:var(--green);">POST /auth/setup <span style="opacity:0.5;font-size:0.58rem;">público</span></span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(250,180,50,0.08);border:1px solid rgba(250,180,50,0.2);border-radius:3px;color:#fbbf24;">PATCH /auth/email</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(250,180,50,0.08);border:1px solid rgba(250,180,50,0.2);border-radius:3px;color:#fbbf24;">PATCH /auth/password</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(250,180,50,0.08);border:1px solid rgba(250,180,50,0.2);border-radius:3px;color:#fbbf24;">PATCH /pilots/{id}/rank</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(250,180,50,0.08);border:1px solid rgba(250,180,50,0.2);border-radius:3px;color:#fbbf24;">PATCH /pilots/{id}/role</span>
+          <span style="font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.3rem 0.7rem;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);border-radius:3px;color:var(--accent);">GET /health</span>
         </div>
       </div>
 
@@ -860,7 +870,7 @@
           <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">PILOT_PLENO <span style="opacity:0.6">lv.3</span></span>
           <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">PILOT_STANDARD <span style="opacity:0.6">lv.2</span></span>
           <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.6rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">TRAINEE <span style="opacity:0.6">lv.1</span></span>
-          <span style="font-size:0.55rem;color:var(--muted2);align-self:center;font-family:'JetBrains Mono',monospace;width:100%;margin-top:0.2rem;" data-i18n="feat_ranks_note">· imune = sem promoção/rebaixamento automático por score</span>
+          <span style="font-size:0.55rem;color:var(--muted2);align-self:center;font-family:'JetBrains Mono',monospace;width:100%;margin-top:0.2rem;" data-i18n="feat_ranks_note">· imune = sem promoção/rebaixamento automático por score · progressão automática apenas níveis &lt; 5</span>
         </div>
       </div>
     </div>
@@ -924,6 +934,8 @@
       <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Swagger / OpenAPI</span>
       <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Discord Webhooks</span>
       <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Lombok</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">HikariCP</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Flyway</span>
       <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Bean Validation</span>
       <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;opacity:0.6;">—</span>
       <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:rgba(79,142,247,0.06);border:1px solid rgba(79,142,247,0.18);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Next.js</span>
@@ -1742,7 +1754,7 @@ const translations = {
     feat_h2_label: 'Hierarquia', feat_h2: '8 ranks · TRAINEE → LEAD · ADM · imunidade a promoção e rebaixamento automático para ranks ≥ 5',
     feat_h3_label: 'Score Engine',
     feat_h4: 'Documentação completa · JWT integrado · Docs via Google Docs · duração de voo calculada automaticamente',
-    feat_endpoints_label: '// Endpoints principais', feat_ranks_label: '// Hierarquia de Ranks', feat_ranks_note: '· imune = sem promoção/rebaixamento automático por score', feat_gallery_label: '// Sistema em Produção',
+    feat_endpoints_label: '// Endpoints principais', feat_ranks_label: '// Hierarquia de Ranks', feat_ranks_note: '· imune = sem promoção/rebaixamento automático por score · progressão automática apenas níveis < 5', feat_gallery_label: '// Sistema em Produção',
     feat_infra_label: '// Infraestrutura de Produção', feat_infra_online: 'Todos os sistemas online',
     feat_infra_back: 'Backend', feat_infra_back_desc: 'Spring Boot · Free tier · Deploy automático via GitHub',
     feat_infra_front: 'Frontend', feat_infra_front_desc: 'Next.js · Edge Network · CI/CD automático',
@@ -1849,7 +1861,7 @@ const translations = {
     feat_h3_label: 'Score Engine',
     feat_h4: 'Full docs · integrated JWT · Google Docs links · auto flight duration · Discord webhook on report review',
     feat_h6_label: 'Packages', feat_h5_label: 'Public Page', feat_h5: '<a href="https://air-ops-system-web.vercel.app/status" target="_blank" style="color:var(--accent);text-decoration:none;">/status</a> — roster, metrics and unit activity without authentication',
-    feat_endpoints_label: '// Main Endpoints', feat_ranks_label: '// Rank Hierarchy', feat_ranks_note: '· immune = no automatic promotion/demotion by score', feat_gallery_label: '// System in Production',
+    feat_endpoints_label: '// Main Endpoints', feat_ranks_label: '// Rank Hierarchy', feat_ranks_note: '· immune = no automatic promotion/demotion by score · auto-progression for levels < 5 only', feat_gallery_label: '// System in Production',
     feat_infra_label: '// Production Infrastructure', feat_infra_online: 'All systems online',
     feat_infra_back: 'Backend', feat_infra_back_desc: 'Spring Boot · Free tier · Auto-deploy via GitHub',
     feat_infra_front: 'Frontend', feat_infra_front_desc: 'Next.js · Edge Network · Automatic CI/CD',
