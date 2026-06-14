@@ -1,2 +1,11 @@
 screenshot-finance.js
 screenshots-finance/
+.vercel
+node_modules/
+package-lock.json
+package.json
+public/images/sesmt/02_login_filled.png
+public/images/sesmt/03_after_login.png
+public/images/sesmt/03_dashboard.png
+public/images/sesmt/04_after_login.png
+public/images/sesmt/99_final.png
