@@ -507,7 +507,7 @@
   .i18n-fade.fading { opacity: 0; }
 
 </style>
-<script>history.scrollRestoration = "manual";</script>
+<script>history.scrollRestoration = "manual"; window.addEventListener("load", function(){ window.scrollTo(0, 0); }); window.addEventListener("beforeunload", function(){ window.scrollTo(0, 0); });</script>
 </head>
 <body>
 
