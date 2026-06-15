@@ -508,7 +508,6 @@
   .i18n-fade.fading { opacity: 0; }
 
 </style>
-<script>history.scrollRestoration = "manual"; window.addEventListener("load", function(){ window.scrollTo(0, 0); }); window.addEventListener("beforeunload", function(){ window.scrollTo(0, 0); });</script>
 </head>
 <body>
 
@@ -938,7 +937,7 @@
           mainLbl.textContent=s.label;
           if(lightbox.style.display==='flex'){ lbImg.src=s.src; lbLbl.textContent=s.label; }
           thumbsEl.querySelectorAll('img').forEach((th,j)=>{ th.style.borderColor=j===window.asdIdx?'var(--accent)':'transparent'; th.style.opacity=j===window.asdIdx?'1':'0.55'; });
-          const act=thumbsEl.querySelectorAll('img')[window.asdIdx]; if(act) act.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+          const act=thumbsEl.querySelectorAll('img')[window.asdIdx]; if(act){ const cR=thumbsEl.getBoundingClientRect(),aR=act.getBoundingClientRect(); thumbsEl.scrollTo({left:thumbsEl.scrollLeft+(aR.left-cR.left)-(cR.width-aR.width)/2,behavior:'smooth'}); }
         }
         window.asdNav=function(d){ asdSet(window.asdIdx+d); };
         window.asdOpenLightbox=function(i){ asdSet(i); lbImg.src=slides[window.asdIdx].src; lbLbl.textContent=slides[window.asdIdx].label; lightbox.style.display='flex'; document.body.style.overflow='hidden'; };
@@ -1245,7 +1244,7 @@
         mainLbl.textContent=s.label;
         if(lightbox.style.display==='flex'){ lbImg.src=s.src; lbLbl.textContent=s.label; }
         thumbsEl.querySelectorAll('img').forEach((th,j)=>{ th.style.borderColor=j===window.finIdx?'var(--accent)':'transparent'; th.style.opacity=j===window.finIdx?'1':'0.55'; });
-        const act=thumbsEl.querySelectorAll('img')[window.finIdx]; if(act) act.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+        const act=thumbsEl.querySelectorAll('img')[window.finIdx]; if(act){ const cR=thumbsEl.getBoundingClientRect(),aR=act.getBoundingClientRect(); thumbsEl.scrollTo({left:thumbsEl.scrollLeft+(aR.left-cR.left)-(cR.width-aR.width)/2,behavior:'smooth'}); }
       }
       window.finNav=function(d){ finSet(window.finIdx+d); };
       window.finOpenLightbox=function(i){ finSet(i); lbImg.src=slides[window.finIdx].src; lbLbl.textContent=slides[window.finIdx].label; lightbox.style.display='flex'; document.body.style.overflow='hidden'; };
@@ -1546,7 +1545,7 @@
         });
         // Scroll thumb into view
         const activeTh = thumbsEl.querySelectorAll('img')[window.pgeoIdx];
-        if (activeTh) activeTh.scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
+        if (activeTh) { const cR=thumbsEl.getBoundingClientRect(),aR=activeTh.getBoundingClientRect(); thumbsEl.scrollTo({left:thumbsEl.scrollLeft+(aR.left-cR.left)-(cR.width-aR.width)/2,behavior:'smooth'}); }
       }
 
       window.pgeoNav = function(dir) { pgeoSet(window.pgeoIdx + dir); };
