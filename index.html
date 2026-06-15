@@ -1759,6 +1759,10 @@
 <script>
 /* cursor removed */
 
+/* ── SCROLL RESTORATION FIX ── */
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 /* ── REVEAL ON SCROLL ── */
 const revealSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale';
 const allReveals = document.querySelectorAll(revealSelectors);
