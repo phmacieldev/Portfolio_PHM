@@ -524,9 +524,9 @@
   <ul class="nav-links">
     <li><a href="#about" data-i18n="nav_about">Sobre</a></li>
     <li><a href="#skills">Stack</a></li>
+    <li><a href="#sesmt" data-i18n="nav_sesmt">PGEO</a></li>
     <li><a href="#featured" data-i18n="nav_featured">Air Ops</a></li>
     <li><a href="#finance-api" data-i18n="nav_finance">Finance</a></li>
-    <li><a href="#sesmt" data-i18n="nav_sesmt">PGEO</a></li>
     <li><a href="#brand" data-i18n="nav_brand">Marca</a></li>
     <li><a href="#contact" data-i18n="nav_contact">Contato</a></li>
   </ul>
@@ -689,9 +689,315 @@
 </section>
 
 <!-- FEATURED PROJECT -->
-<section id="featured" style="padding:7rem 3rem;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<section id="sesmt" style="padding:7rem 3rem;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div style="max-width:1100px;margin:0 auto;">
-    <p class="section-label reveal-left" data-i18n="feat_label">// 03 — Featured Project</p>
+    <p class="section-label reveal-left">// 03 — PGEO · SESMT</p>
+    <h2 class="section-title reveal" data-i18n="pgeo_title">PGEO — SESMT</h2>
+
+    <!-- HERO CARD -->
+    <div class="reveal" style="background:var(--bg3);border:1px solid rgba(79,142,247,0.25);border-radius:8px;overflow:hidden;margin-bottom:2rem;position:relative;">
+      <div style="height:3px;background:linear-gradient(90deg,var(--accent),rgba(79,142,247,0.2),transparent);"></div>
+      <div style="padding:2.5rem 2.5rem 0;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-bottom:1.8rem;">
+          <div>
+            <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.6rem;flex-wrap:wrap;">
+              <span style="font-size:0.62rem;letter-spacing:0.18em;color:var(--accent);text-transform:uppercase;border:1px solid rgba(79,142,247,0.3);padding:0.2rem 0.6rem;border-radius:2px;" data-i18n="pgeo_badge">Sistema Real em Produção</span>
+              <span style="font-size:0.62rem;letter-spacing:0.1em;color:var(--muted);border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:2px;" data-i18n="pgeo_context">Hospital · +1.000 funcionários</span>
+              <span style="font-size:0.62rem;letter-spacing:0.1em;color:var(--green);background:var(--green-dim);border:1px solid rgba(34,211,165,0.2);padding:0.2rem 0.6rem;border-radius:2px;">● <span data-i18n="status_active">Ativo</span></span>
+            </div>
+            <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;color:var(--text);line-height:1.1;" data-i18n="pgeo_name">PGEO — Gestão de Saúde Ocupacional</h3>
+            <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;letter-spacing:0.04em;" data-i18n="pgeo_sub">SESMT Hospitalar · Spring MVC · Thymeleaf · WebSocket STOMP · Docker · nginx SSL</p>
+          </div>
+          <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+            <a href="https://github.com/phmacieldev/sistema-sesmt" target="_blank" class="btn btn-secondary" style="font-size:0.7rem;padding:0.6rem 1.1rem;" data-i18n="pgeo_btn_github">GitHub →</a>
+          </div>
+        </div>
+        <p style="font-size:0.85rem;color:var(--muted);line-height:1.85;max-width:780px;margin-bottom:2rem;" data-i18n="pgeo_desc">Sistema web completo de gestão do SESMT de um hospital com mais de 1.000 funcionários. Gerencia agendamentos de exames ocupacionais e ASO com atualizações em tempo real via WebSocket STOMP, atestados médicos com controle de absenteísmo (alerta automático INSS), calendário semanal visual, geração de documentos em PDF e Excel, e trilha de auditoria completa de todas as ações.</p>
+        <div style="margin-bottom:2rem;">
+          <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="pgeo_arch_label">// Arquitetura</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+            <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
+              <div style="font-size:1.4rem;margin-bottom:0.4rem;">🌐</div>
+              <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;" data-i18n="pgeo_arch_browser">Navegador</div>
+              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">HTML · Thymeleaf</div>
+            </div>
+            <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+              <div style="font-size:0.6rem;color:var(--accent);letter-spacing:0.1em;">HTTPS</div>
+              <div style="font-size:0.9rem;color:var(--accent);">⟷</div>
+              <div style="font-size:0.55rem;color:var(--muted2);">nginx SSL</div>
+            </div>
+            <div style="background:var(--bg3);padding:1.2rem;text-align:center;border:1px solid rgba(79,142,247,0.2);">
+              <div style="font-size:1.4rem;margin-bottom:0.4rem;">⚙️</div>
+              <div style="font-size:0.7rem;font-weight:600;color:var(--accent);margin-bottom:0.3rem;">Spring MVC</div>
+              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Java · Thymeleaf · WS</div>
+            </div>
+            <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;">JPA / SQL</div>
+              <div style="font-size:0.9rem;color:var(--muted);">⟷</div>
+            </div>
+            <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
+              <div style="font-size:1.4rem;margin-bottom:0.4rem;">🗄️</div>
+              <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">PostgreSQL 16</div>
+              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Docker · ACID</div>
+            </div>
+            <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
+              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;">Docs</div>
+              <div style="font-size:0.9rem;color:var(--muted);">→</div>
+            </div>
+            <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
+              <div style="font-size:1.4rem;margin-bottom:0.4rem;">📄</div>
+              <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">PDF / Excel</div>
+              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">iText · Apache POI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- highlights grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border-top:1px solid var(--border);">
+        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h1_label">Agendamentos</div>
+          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h1">Dashboard com filtros por mês, funcionário e estabelecimento · calendário semanal visual · guias em PDF</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h2_label">ASO em Tempo Real</div>
+          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h2">Status do ASO atualizado via <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">WebSocket STOMP</code> sem necessidade de reload</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h3_label">Atestados</div>
+          <div style="font-size:0.78rem;color:var(--text);line-height:1.7;">
+            <code style="font-size:0.68rem;color:var(--green);background:rgba(34,211,165,0.08);padding:0.1rem 0.3rem;border-radius:2px;display:block;margin-bottom:0.6rem;">Absenteísmo 60 dias · alerta INSS &gt; 15 dias</code>
+            <div style="font-size:0.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">totais por setor e tipo de afastamento</div>
+          </div>
+        </div>
+        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h4_label">Funcionários</div>
+          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h4">Histórico completo com mudanças de cargo, agendamentos e atestados · edição inline · auditoria de alterações</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h5_label">Segurança</div>
+          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h5">Roles ADMIN / OPERADOR · sessão expira em 4h · audit trail completo · nginx com certificado TLS</div>
+        </div>
+        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
+          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h6_label">Documentos</div>
+          <div style="font-size:0.72rem;color:var(--text);line-height:1.7;font-family:'JetBrains Mono',monospace;">
+            <span style="color:var(--accent)">PDF</span> via iText · <span style="color:var(--accent)">Excel</span> via Apache POI<br/>
+            <span style="color:var(--muted)">Guias de exame</span> · <span style="color:var(--muted)">relatórios</span><br/>
+            <span style="color:var(--muted2);font-size:0.62rem;">sangue: limite 10 exames/dia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- roles + modules -->
+      <div style="padding:1.8rem 2.5rem;border-top:1px solid var(--border);">
+        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="pgeo_roles_label">// Roles / Permissões</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;">
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.7rem;background:rgba(79,142,247,0.15);border:1px solid rgba(79,142,247,0.35);border-radius:3px;color:var(--accent);">ADMIN <span style="opacity:0.6">· acesso total · gestão de usuários</span></span>
+          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.7rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">OPERADOR <span style="opacity:0.6">· agendamentos e atestados</span></span>
+          <span style="font-size:0.55rem;color:var(--muted2);align-self:center;font-family:'JetBrains Mono',monospace;width:100%;margin-top:0.2rem;" data-i18n="pgeo_roles_note">· sessão expira em 4h · audit trail de todas as ações</span>
+        </div>
+        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="pgeo_routes_label">// Módulos Principais</div>
+        <div style="display:grid;gap:0.5rem;">
+          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
+            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/dashboard</code>
+            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r1">Painel geral com filtros e estatísticas</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
+            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/agendamentos</code>
+            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r2">Calendário semanal · filtros · PDF</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
+            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/atestados</code>
+            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r3">Atestados · absenteísmo · alerta INSS</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
+            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/funcionarios</code>
+            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r4">Perfis · histórico completo · edição inline</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
+            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(34,211,165,0.12);border:1px solid rgba(34,211,165,0.3);border-radius:2px;color:var(--green);min-width:46px;text-align:center;">WS</span>
+            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/ws</code>
+            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r5">STOMP WebSocket · status ASO em tempo real</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
+            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
+            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/admin</code>
+            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r6">Gestão de usuários · audit trail</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div style="margin-top:2rem;" class="reveal">
+      <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1.2rem;" data-i18n="pgeo_gallery_label">// Sistema em Produção</div>
+
+      <!-- Carousel container -->
+      <div id="pgeo-carousel" style="position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--border2);background:var(--bg3);">
+        <!-- Main viewer -->
+        <div style="position:relative;aspect-ratio:16/9;overflow:hidden;cursor:zoom-in;" id="pgeo-main-viewer" onclick="pgeoOpenLightbox(pgeoIdx)">
+          <img id="pgeo-main-img" src="public/images/sesmt/02_home.png" alt="PGEO SESMT" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity 0.25s;" />
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem 1rem;background:linear-gradient(transparent,rgba(8,10,15,0.85));display:flex;align-items:center;justify-content:space-between;">
+            <span id="pgeo-main-label" style="font-size:0.65rem;letter-spacing:0.12em;color:var(--text);text-transform:uppercase;">Dashboard</span>
+            <span style="font-size:0.6rem;color:var(--muted2);">clique para ampliar</span>
+          </div>
+          <!-- Prev/Next arrows -->
+          <button onclick="event.stopPropagation();pgeoNav(-1)" style="position:absolute;left:0.8rem;top:50%;transform:translateY(-50%);background:rgba(8,10,15,0.7);border:1px solid var(--border2);color:var(--text);width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(79,142,247,0.3)'" onmouseout="this.style.background='rgba(8,10,15,0.7)'">‹</button>
+          <button onclick="event.stopPropagation();pgeoNav(1)"  style="position:absolute;right:0.8rem;top:50%;transform:translateY(-50%);background:rgba(8,10,15,0.7);border:1px solid var(--border2);color:var(--text);width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(79,142,247,0.3)'" onmouseout="this.style.background='rgba(8,10,15,0.7)'">›</button>
+        </div>
+
+        <!-- Thumbnail strip -->
+        <div style="display:flex;gap:0.5rem;padding:0.75rem;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--border2) transparent;" id="pgeo-thumbs">
+          <!-- thumbnails injected by script -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="pgeo-lightbox" onclick="pgeoCloseLightbox()" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;cursor:zoom-out;">
+      <button onclick="event.stopPropagation();pgeoNav(-1)" style="position:fixed;left:1.5rem;top:50%;transform:translateY(-50%);background:rgba(30,37,53,0.9);border:1px solid var(--border2);color:var(--text);width:3rem;height:3rem;border-radius:50%;cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;">‹</button>
+      <img id="pgeo-lb-img" src="" alt="" style="max-width:92vw;max-height:90vh;border-radius:6px;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,0.8);" onclick="event.stopPropagation()" />
+      <button onclick="event.stopPropagation();pgeoNav(1)"  style="position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);background:rgba(30,37,53,0.9);border:1px solid var(--border2);color:var(--text);width:3rem;height:3rem;border-radius:50%;cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;">›</button>
+      <button onclick="pgeoCloseLightbox()" style="position:fixed;top:1rem;right:1rem;background:transparent;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;">✕</button>
+      <div id="pgeo-lb-label" style="position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);font-size:0.7rem;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;"></div>
+    </div>
+
+    <script>
+    (function(){
+      const slides = [
+        { src:'public/images/sesmt/02_home.png',             label:'Dashboard' },
+        { src:'public/images/sesmt/07_relatorio_aso.png',    label:'Relatório de ASO' },
+        { src:'public/images/sesmt/11_estatisticas.png',     label:'Estatísticas de Exames' },
+        { src:'public/images/sesmt/12_indicadores.png',      label:'Indicadores SESMT' },
+        { src:'public/images/sesmt/05_agenda.png',           label:'Agenda · Mês / Semana / Dia' },
+        { src:'public/images/sesmt/03_dashboard_exames.png', label:'Agendamentos' },
+        { src:'public/images/sesmt/06_dashboard_sangue.png', label:'Exames de Sangue' },
+        { src:'public/images/sesmt/10_funcionarios.png',     label:'Funcionários' },
+        { src:'public/images/sesmt/13_admin_usuarios.png',   label:'Admin · Usuários' },
+        { src:'public/images/sesmt/14_admin_auditoria.png',  label:'Admin · Auditoria' },
+        { src:'public/images/sesmt/01_login.png',            label:'Login' },
+      ];
+
+      window.pgeoIdx = 0;
+      const mainImg   = document.getElementById('pgeo-main-img');
+      const mainLabel = document.getElementById('pgeo-main-label');
+      const lbImg     = document.getElementById('pgeo-lb-img');
+      const lbLabel   = document.getElementById('pgeo-lb-label');
+      const lightbox  = document.getElementById('pgeo-lightbox');
+      const thumbsEl  = document.getElementById('pgeo-thumbs');
+
+      // Build thumbs
+      slides.forEach((s, i) => {
+        const th = document.createElement('img');
+        th.src = s.src;
+        th.alt = s.label;
+        th.title = s.label;
+        th.dataset.i = i;
+        th.style.cssText = 'height:56px;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:4px;cursor:pointer;border:2px solid transparent;flex-shrink:0;transition:border-color 0.2s,opacity 0.2s;opacity:0.55;';
+        th.onclick = () => pgeoSet(i);
+        thumbsEl.appendChild(th);
+      });
+
+      function pgeoSet(i) {
+        window.pgeoIdx = (i + slides.length) % slides.length;
+        const s = slides[window.pgeoIdx];
+        mainImg.style.opacity = '0';
+        setTimeout(() => { mainImg.src = s.src; mainImg.style.opacity = '1'; }, 150);
+        mainLabel.textContent = s.label;
+        if (lightbox.style.display === 'flex') { lbImg.src = s.src; lbLabel.textContent = s.label; }
+        // Update thumbs highlight
+        thumbsEl.querySelectorAll('img').forEach((th, j) => {
+          th.style.borderColor = j === window.pgeoIdx ? 'var(--accent)' : 'transparent';
+          th.style.opacity     = j === window.pgeoIdx ? '1' : '0.55';
+        });
+        // Scroll thumb into view
+        const activeTh = thumbsEl.querySelectorAll('img')[window.pgeoIdx];
+        if (activeTh) { const cR=thumbsEl.getBoundingClientRect(),aR=activeTh.getBoundingClientRect(); thumbsEl.scrollTo({left:thumbsEl.scrollLeft+(aR.left-cR.left)-(cR.width-aR.width)/2,behavior:'smooth'}); }
+      }
+
+      window.pgeoNav = function(dir) { pgeoSet(window.pgeoIdx + dir); };
+      window.pgeoOpenLightbox = function(i) {
+        pgeoSet(i);
+        lbImg.src = slides[window.pgeoIdx].src;
+        lbLabel.textContent = slides[window.pgeoIdx].label;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      };
+      window.pgeoCloseLightbox = function() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', e => {
+        if (lightbox.style.display !== 'flex') return;
+        if (e.key === 'ArrowLeft')  pgeoNav(-1);
+        if (e.key === 'ArrowRight') pgeoNav(1);
+        if (e.key === 'Escape')     pgeoCloseLightbox();
+      });
+
+      pgeoSet(0);
+    })();
+    </script>
+
+    <!-- stack pills -->
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2rem;" class="reveal">
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Java</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Spring Boot 3.3</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Spring MVC</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Thymeleaf</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">PostgreSQL 16</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">WebSocket STOMP</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Docker Compose</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">nginx</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">iText</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Apache POI</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Spring Security</span>
+      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">JPA / Hibernate</span>
+    </div>
+  </div>
+
+  <!-- INFRA STACK -->
+  <div class="reveal" style="margin-top:2rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:1100px;margin-left:auto;margin-right:auto;">
+    <div style="padding:1.2rem 1.8rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;">
+      <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_label">// Infraestrutura de Produção</div>
+      <div style="display:flex;align-items:center;gap:0.4rem;">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse-green 2s infinite;"></span>
+        <span style="font-size:0.62rem;color:var(--green);letter-spacing:0.08em;" data-i18n="pgeo_infra_online">Sistema online</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);">
+      <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🐳</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_deploy">Deploy</div></div>
+        <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">Docker Compose</div>
+        <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_deploy_desc">Ambiente completo em containers · multi-serviço</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🔒</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_ssl">Segurança</div></div>
+        <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">nginx + TLS</div>
+        <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_ssl_desc">Certificado TLS · proxy reverso · HTTPS forçado</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🗄️</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_db">Database</div></div>
+        <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">PostgreSQL 16</div>
+        <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_db_desc">Container dedicado · volumes persistentes · backups</div>
+      </div>
+      <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🔄</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_update">Atualizações</div></div>
+        <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">autopull.sh</div>
+        <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_update_desc">Script de deploy automatizado via webhook do GitHub</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="featured" style="padding:7rem 3rem;background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label reveal-left" data-i18n="feat_label">// 04 — Featured Project</p>
     <h2 class="section-title reveal" data-i18n="feat_title">Air Ops System</h2>
 
     <!-- HERO CARD -->
@@ -1028,9 +1334,9 @@
 </section>
 
 <!-- FINANCE API -->
-<section id="finance-api" style="padding:7rem 3rem;background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<section id="finance-api" style="padding:7rem 3rem;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div style="max-width:1100px;margin:0 auto;">
-    <p class="section-label reveal-left">// 04 — Finance API</p>
+    <p class="section-label reveal-left">// 05 — Finance API</p>
     <h2 class="section-title reveal" data-i18n="fin_title">Finance API</h2>
 
     <!-- HERO CARD -->
@@ -1315,315 +1621,6 @@
   </div>
 </section>
 
-<section id="sesmt" style="padding:7rem 3rem;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div style="max-width:1100px;margin:0 auto;">
-    <p class="section-label reveal-left">// 05 — PGEO · SESMT</p>
-    <h2 class="section-title reveal" data-i18n="pgeo_title">PGEO — SESMT</h2>
-
-    <!-- HERO CARD -->
-    <div class="reveal" style="background:var(--bg3);border:1px solid rgba(79,142,247,0.25);border-radius:8px;overflow:hidden;margin-bottom:2rem;position:relative;">
-      <div style="height:3px;background:linear-gradient(90deg,var(--accent),rgba(79,142,247,0.2),transparent);"></div>
-      <div style="padding:2.5rem 2.5rem 0;">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-bottom:1.8rem;">
-          <div>
-            <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.6rem;flex-wrap:wrap;">
-              <span style="font-size:0.62rem;letter-spacing:0.18em;color:var(--accent);text-transform:uppercase;border:1px solid rgba(79,142,247,0.3);padding:0.2rem 0.6rem;border-radius:2px;" data-i18n="pgeo_badge">Sistema Real em Produção</span>
-              <span style="font-size:0.62rem;letter-spacing:0.1em;color:var(--muted);border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:2px;" data-i18n="pgeo_context">Hospital · +1.000 funcionários</span>
-              <span style="font-size:0.62rem;letter-spacing:0.1em;color:var(--green);background:var(--green-dim);border:1px solid rgba(34,211,165,0.2);padding:0.2rem 0.6rem;border-radius:2px;">● <span data-i18n="status_active">Ativo</span></span>
-            </div>
-            <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;color:var(--text);line-height:1.1;" data-i18n="pgeo_name">PGEO — Gestão de Saúde Ocupacional</h3>
-            <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;letter-spacing:0.04em;" data-i18n="pgeo_sub">SESMT Hospitalar · Spring MVC · Thymeleaf · WebSocket STOMP · Docker · nginx SSL</p>
-          </div>
-          <div style="display:flex;gap:0.8rem;flex-shrink:0;">
-            <a href="https://github.com/phmacieldev/sistema-sesmt" target="_blank" class="btn btn-secondary" style="font-size:0.7rem;padding:0.6rem 1.1rem;" data-i18n="pgeo_btn_github">GitHub →</a>
-          </div>
-        </div>
-        <p style="font-size:0.85rem;color:var(--muted);line-height:1.85;max-width:780px;margin-bottom:2rem;" data-i18n="pgeo_desc">Sistema web completo de gestão do SESMT de um hospital com mais de 1.000 funcionários. Gerencia agendamentos de exames ocupacionais e ASO com atualizações em tempo real via WebSocket STOMP, atestados médicos com controle de absenteísmo (alerta automático INSS), calendário semanal visual, geração de documentos em PDF e Excel, e trilha de auditoria completa de todas as ações.</p>
-        <div style="margin-bottom:2rem;">
-          <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="pgeo_arch_label">// Arquitetura</div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;">
-            <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
-              <div style="font-size:1.4rem;margin-bottom:0.4rem;">🌐</div>
-              <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;" data-i18n="pgeo_arch_browser">Navegador</div>
-              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">HTML · Thymeleaf</div>
-            </div>
-            <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
-              <div style="font-size:0.6rem;color:var(--accent);letter-spacing:0.1em;">HTTPS</div>
-              <div style="font-size:0.9rem;color:var(--accent);">⟷</div>
-              <div style="font-size:0.55rem;color:var(--muted2);">nginx SSL</div>
-            </div>
-            <div style="background:var(--bg3);padding:1.2rem;text-align:center;border:1px solid rgba(79,142,247,0.2);">
-              <div style="font-size:1.4rem;margin-bottom:0.4rem;">⚙️</div>
-              <div style="font-size:0.7rem;font-weight:600;color:var(--accent);margin-bottom:0.3rem;">Spring MVC</div>
-              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Java · Thymeleaf · WS</div>
-            </div>
-            <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
-              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;">JPA / SQL</div>
-              <div style="font-size:0.9rem;color:var(--muted);">⟷</div>
-            </div>
-            <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
-              <div style="font-size:1.4rem;margin-bottom:0.4rem;">🗄️</div>
-              <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">PostgreSQL 16</div>
-              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">Docker · ACID</div>
-            </div>
-            <div style="background:var(--bg2);padding:1.2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;">
-              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;">Docs</div>
-              <div style="font-size:0.9rem;color:var(--muted);">→</div>
-            </div>
-            <div style="background:var(--bg2);padding:1.2rem;text-align:center;">
-              <div style="font-size:1.4rem;margin-bottom:0.4rem;">📄</div>
-              <div style="font-size:0.7rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;">PDF / Excel</div>
-              <div style="font-size:0.6rem;color:var(--muted);letter-spacing:0.05em;">iText · Apache POI</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- highlights grid -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border-top:1px solid var(--border);">
-        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
-          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h1_label">Agendamentos</div>
-          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h1">Dashboard com filtros por mês, funcionário e estabelecimento · calendário semanal visual · guias em PDF</div>
-        </div>
-        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
-          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h2_label">ASO em Tempo Real</div>
-          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h2">Status do ASO atualizado via <code style="font-size:0.72rem;color:var(--accent);background:rgba(79,142,247,0.08);padding:0.1rem 0.3rem;border-radius:2px;">WebSocket STOMP</code> sem necessidade de reload</div>
-        </div>
-        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
-          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h3_label">Atestados</div>
-          <div style="font-size:0.78rem;color:var(--text);line-height:1.7;">
-            <code style="font-size:0.68rem;color:var(--green);background:rgba(34,211,165,0.08);padding:0.1rem 0.3rem;border-radius:2px;display:block;margin-bottom:0.6rem;">Absenteísmo 60 dias · alerta INSS &gt; 15 dias</code>
-            <div style="font-size:0.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">totais por setor e tipo de afastamento</div>
-          </div>
-        </div>
-        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
-          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h4_label">Funcionários</div>
-          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h4">Histórico completo com mudanças de cargo, agendamentos e atestados · edição inline · auditoria de alterações</div>
-        </div>
-        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
-          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h5_label">Segurança</div>
-          <div style="font-size:0.82rem;color:var(--text);line-height:1.6;" data-i18n="pgeo_h5">Roles ADMIN / OPERADOR · sessão expira em 4h · audit trail completo · nginx com certificado TLS</div>
-        </div>
-        <div style="background:var(--bg2);padding:1.4rem 1.8rem;">
-          <div style="font-size:0.62rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:0.6rem;" data-i18n="pgeo_h6_label">Documentos</div>
-          <div style="font-size:0.72rem;color:var(--text);line-height:1.7;font-family:'JetBrains Mono',monospace;">
-            <span style="color:var(--accent)">PDF</span> via iText · <span style="color:var(--accent)">Excel</span> via Apache POI<br/>
-            <span style="color:var(--muted)">Guias de exame</span> · <span style="color:var(--muted)">relatórios</span><br/>
-            <span style="color:var(--muted2);font-size:0.62rem;">sangue: limite 10 exames/dia</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- roles + modules -->
-      <div style="padding:1.8rem 2.5rem;border-top:1px solid var(--border);">
-        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="pgeo_roles_label">// Roles / Permissões</div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;">
-          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.7rem;background:rgba(79,142,247,0.15);border:1px solid rgba(79,142,247,0.35);border-radius:3px;color:var(--accent);">ADMIN <span style="opacity:0.6">· acesso total · gestão de usuários</span></span>
-          <span style="font-size:0.62rem;font-family:'JetBrains Mono',monospace;padding:0.25rem 0.7rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);">OPERADOR <span style="opacity:0.6">· agendamentos e atestados</span></span>
-          <span style="font-size:0.55rem;color:var(--muted2);align-self:center;font-family:'JetBrains Mono',monospace;width:100%;margin-top:0.2rem;" data-i18n="pgeo_roles_note">· sessão expira em 4h · audit trail de todas as ações</span>
-        </div>
-        <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1rem;" data-i18n="pgeo_routes_label">// Módulos Principais</div>
-        <div style="display:grid;gap:0.5rem;">
-          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
-            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
-            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/dashboard</code>
-            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r1">Painel geral com filtros e estatísticas</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
-            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
-            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/agendamentos</code>
-            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r2">Calendário semanal · filtros · PDF</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
-            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
-            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/atestados</code>
-            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r3">Atestados · absenteísmo · alerta INSS</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
-            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
-            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/funcionarios</code>
-            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r4">Perfis · histórico completo · edição inline</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
-            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(34,211,165,0.12);border:1px solid rgba(34,211,165,0.3);border-radius:2px;color:var(--green);min-width:46px;text-align:center;">WS</span>
-            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/ws</code>
-            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r5">STOMP WebSocket · status ASO em tempo real</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;background:var(--bg);border-radius:4px;border:1px solid var(--border);">
-            <span style="font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0.15rem 0.5rem;background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:2px;color:var(--accent);min-width:46px;text-align:center;">GET</span>
-            <code style="font-size:0.72rem;color:var(--text);font-family:'JetBrains Mono',monospace;">/admin</code>
-            <span style="font-size:0.65rem;color:var(--muted2);margin-left:auto;" data-i18n="pgeo_r6">Gestão de usuários · audit trail</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- GALLERY -->
-    <div style="margin-top:2rem;" class="reveal">
-      <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1.2rem;" data-i18n="pgeo_gallery_label">// Sistema em Produção</div>
-
-      <!-- Carousel container -->
-      <div id="pgeo-carousel" style="position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--border2);background:var(--bg3);">
-        <!-- Main viewer -->
-        <div style="position:relative;aspect-ratio:16/9;overflow:hidden;cursor:zoom-in;" id="pgeo-main-viewer" onclick="pgeoOpenLightbox(pgeoIdx)">
-          <img id="pgeo-main-img" src="public/images/sesmt/02_home.png" alt="PGEO SESMT" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity 0.25s;" />
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem 1rem;background:linear-gradient(transparent,rgba(8,10,15,0.85));display:flex;align-items:center;justify-content:space-between;">
-            <span id="pgeo-main-label" style="font-size:0.65rem;letter-spacing:0.12em;color:var(--text);text-transform:uppercase;">Dashboard Principal</span>
-            <span style="font-size:0.6rem;color:var(--muted2);">clique para ampliar</span>
-          </div>
-          <!-- Prev/Next arrows -->
-          <button onclick="event.stopPropagation();pgeoNav(-1)" style="position:absolute;left:0.8rem;top:50%;transform:translateY(-50%);background:rgba(8,10,15,0.7);border:1px solid var(--border2);color:var(--text);width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(79,142,247,0.3)'" onmouseout="this.style.background='rgba(8,10,15,0.7)'">‹</button>
-          <button onclick="event.stopPropagation();pgeoNav(1)"  style="position:absolute;right:0.8rem;top:50%;transform:translateY(-50%);background:rgba(8,10,15,0.7);border:1px solid var(--border2);color:var(--text);width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(79,142,247,0.3)'" onmouseout="this.style.background='rgba(8,10,15,0.7)'">›</button>
-        </div>
-
-        <!-- Thumbnail strip -->
-        <div style="display:flex;gap:0.5rem;padding:0.75rem;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--border2) transparent;" id="pgeo-thumbs">
-          <!-- thumbnails injected by script -->
-        </div>
-      </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div id="pgeo-lightbox" onclick="pgeoCloseLightbox()" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;cursor:zoom-out;">
-      <button onclick="event.stopPropagation();pgeoNav(-1)" style="position:fixed;left:1.5rem;top:50%;transform:translateY(-50%);background:rgba(30,37,53,0.9);border:1px solid var(--border2);color:var(--text);width:3rem;height:3rem;border-radius:50%;cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;">‹</button>
-      <img id="pgeo-lb-img" src="" alt="" style="max-width:92vw;max-height:90vh;border-radius:6px;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,0.8);" onclick="event.stopPropagation()" />
-      <button onclick="event.stopPropagation();pgeoNav(1)"  style="position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);background:rgba(30,37,53,0.9);border:1px solid var(--border2);color:var(--text);width:3rem;height:3rem;border-radius:50%;cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;">›</button>
-      <button onclick="pgeoCloseLightbox()" style="position:fixed;top:1rem;right:1rem;background:transparent;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;">✕</button>
-      <div id="pgeo-lb-label" style="position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);font-size:0.7rem;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;"></div>
-    </div>
-
-    <script>
-    (function(){
-      const slides = [
-        { src:'public/images/sesmt/02_home.png',          label:'Dashboard Principal' },
-        { src:'public/images/sesmt/03_dashboard_exames.png', label:'Agendamentos / ASOs' },
-        { src:'public/images/sesmt/04_agendar.png',        label:'Agendar Exame' },
-        { src:'public/images/sesmt/05_agenda.png',         label:'Agenda Visual' },
-        { src:'public/images/sesmt/06_dashboard_sangue.png', label:'Dashboard de Sangue' },
-        { src:'public/images/sesmt/07_relatorio_aso.png',  label:'Relatório ASO' },
-        { src:'public/images/sesmt/08_atestados.png',      label:'Atestados Semanais' },
-        { src:'public/images/sesmt/09_atestados_indicadores.png', label:'Indicadores de Atestados' },
-        { src:'public/images/sesmt/10_funcionarios.png',   label:'Funcionários' },
-        { src:'public/images/sesmt/11_estatisticas.png',   label:'Estatísticas de Exames' },
-        { src:'public/images/sesmt/12_indicadores.png',    label:'Indicadores SESMT' },
-        { src:'public/images/sesmt/13_admin_usuarios.png', label:'Admin — Usuários' },
-        { src:'public/images/sesmt/14_admin_auditoria.png',label:'Admin — Auditoria' },
-        { src:'public/images/sesmt/01_login.png',          label:'Tela de Login' },
-      ];
-
-      window.pgeoIdx = 0;
-      const mainImg   = document.getElementById('pgeo-main-img');
-      const mainLabel = document.getElementById('pgeo-main-label');
-      const lbImg     = document.getElementById('pgeo-lb-img');
-      const lbLabel   = document.getElementById('pgeo-lb-label');
-      const lightbox  = document.getElementById('pgeo-lightbox');
-      const thumbsEl  = document.getElementById('pgeo-thumbs');
-
-      // Build thumbs
-      slides.forEach((s, i) => {
-        const th = document.createElement('img');
-        th.src = s.src;
-        th.alt = s.label;
-        th.title = s.label;
-        th.dataset.i = i;
-        th.style.cssText = 'height:56px;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:4px;cursor:pointer;border:2px solid transparent;flex-shrink:0;transition:border-color 0.2s,opacity 0.2s;opacity:0.55;';
-        th.onclick = () => pgeoSet(i);
-        thumbsEl.appendChild(th);
-      });
-
-      function pgeoSet(i) {
-        window.pgeoIdx = (i + slides.length) % slides.length;
-        const s = slides[window.pgeoIdx];
-        mainImg.style.opacity = '0';
-        setTimeout(() => { mainImg.src = s.src; mainImg.style.opacity = '1'; }, 150);
-        mainLabel.textContent = s.label;
-        if (lightbox.style.display === 'flex') { lbImg.src = s.src; lbLabel.textContent = s.label; }
-        // Update thumbs highlight
-        thumbsEl.querySelectorAll('img').forEach((th, j) => {
-          th.style.borderColor = j === window.pgeoIdx ? 'var(--accent)' : 'transparent';
-          th.style.opacity     = j === window.pgeoIdx ? '1' : '0.55';
-        });
-        // Scroll thumb into view
-        const activeTh = thumbsEl.querySelectorAll('img')[window.pgeoIdx];
-        if (activeTh) { const cR=thumbsEl.getBoundingClientRect(),aR=activeTh.getBoundingClientRect(); thumbsEl.scrollTo({left:thumbsEl.scrollLeft+(aR.left-cR.left)-(cR.width-aR.width)/2,behavior:'smooth'}); }
-      }
-
-      window.pgeoNav = function(dir) { pgeoSet(window.pgeoIdx + dir); };
-      window.pgeoOpenLightbox = function(i) {
-        pgeoSet(i);
-        lbImg.src = slides[window.pgeoIdx].src;
-        lbLabel.textContent = slides[window.pgeoIdx].label;
-        lightbox.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      };
-      window.pgeoCloseLightbox = function() {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = '';
-      };
-      document.addEventListener('keydown', e => {
-        if (lightbox.style.display !== 'flex') return;
-        if (e.key === 'ArrowLeft')  pgeoNav(-1);
-        if (e.key === 'ArrowRight') pgeoNav(1);
-        if (e.key === 'Escape')     pgeoCloseLightbox();
-      });
-
-      pgeoSet(0);
-    })();
-    </script>
-
-    <!-- stack pills -->
-    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2rem;" class="reveal">
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Java</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Spring Boot 3.3</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Spring MVC</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Thymeleaf</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">PostgreSQL 16</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">WebSocket STOMP</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Docker Compose</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">nginx</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">iText</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Apache POI</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">Spring Security</span>
-      <span style="font-size:0.68rem;padding:0.3rem 0.8rem;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;">JPA / Hibernate</span>
-    </div>
-  </div>
-
-  <!-- INFRA STACK -->
-  <div class="reveal" style="margin-top:2rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:1100px;margin-left:auto;margin-right:auto;">
-    <div style="padding:1.2rem 1.8rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;">
-      <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_label">// Infraestrutura de Produção</div>
-      <div style="display:flex;align-items:center;gap:0.4rem;">
-        <span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse-green 2s infinite;"></span>
-        <span style="font-size:0.62rem;color:var(--green);letter-spacing:0.08em;" data-i18n="pgeo_infra_online">Sistema online</span>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);">
-      <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🐳</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_deploy">Deploy</div></div>
-        <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">Docker Compose</div>
-        <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_deploy_desc">Ambiente completo em containers · multi-serviço</div>
-      </div>
-      <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🔒</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_ssl">Segurança</div></div>
-        <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">nginx + TLS</div>
-        <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_ssl_desc">Certificado TLS · proxy reverso · HTTPS forçado</div>
-      </div>
-      <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🗄️</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_db">Database</div></div>
-        <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">PostgreSQL 16</div>
-        <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_db_desc">Container dedicado · volumes persistentes · backups</div>
-      </div>
-      <div style="background:var(--bg2);padding:1.3rem 1.5rem;">
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;"><span style="font-size:1rem;">🔄</span><div style="font-size:0.62rem;letter-spacing:0.14em;color:var(--muted2);text-transform:uppercase;" data-i18n="pgeo_infra_update">Atualizações</div></div>
-        <div style="font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.3rem;font-family:'JetBrains Mono',monospace;">autopull.sh</div>
-        <div style="font-size:0.7rem;color:var(--muted);line-height:1.5;" data-i18n="pgeo_infra_update_desc">Script de deploy automatizado via webhook do GitHub</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- PROJECTS -->
 <section id="projects" style="padding:6rem 3rem;">
   <div style="max-width:1100px;margin:0 auto;">
     <p class="section-label reveal-left" data-i18n="proj_label">// 06 — Projetos</p>
@@ -1862,7 +1859,7 @@ const translations = {
     skill_devops: 'DevOps &amp; Ferramentas', skill_devops_desc: 'Ferramentas de workflow, conteinerização e colaboração.',
     skill_arch: 'Arquitetura', skill_arch_desc: 'Princípios e padrões para sistemas escaláveis e sustentáveis.',
     // featured
-    feat_label: '// 03 — Featured Project', feat_title: 'Air Ops System',
+    feat_label: '// 04 — Featured Project', feat_title: 'Air Ops System',
     feat_badge: 'Sistema Real em Produção', feat_name: 'Air Support Division — Backend System',
     feat_sub: 'API REST · JWT Stateless · RBAC · Score Engine · Página Pública · Docker · PostgreSQL · Swagger',
     feat_btn_back: 'Backend →', feat_btn_front: 'Frontend →',
@@ -1968,7 +1965,7 @@ const translations = {
     skill_backend_desc: 'Core stack for building APIs and server-side systems.',
     skill_devops: 'DevOps &amp; Tools', skill_devops_desc: 'Tools for workflow, containerization and collaboration.',
     skill_arch: 'Architecture', skill_arch_desc: 'Principles and patterns for scalable, maintainable systems.',
-    feat_label: '// 03 — Featured Project', feat_title: 'Air Ops System',
+    feat_label: '// 04 — Featured Project', feat_title: 'Air Ops System',
     feat_badge: 'Real System in Production', feat_name: 'Air Support Division — Backend System',
     feat_sub: 'REST API · Stateless JWT · RBAC · Score Engine · Public Status · Docker · PostgreSQL · Swagger',
     feat_btn_back: 'Backend →', feat_btn_front: 'Frontend →',
